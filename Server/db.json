@@ -1,0 +1,44 @@
+{
+    "sale":[
+        {
+            "id": 0,
+            "capacity": 90
+        },
+        {
+            "id": 1,
+            "capacity": 100
+        },
+        {
+            "id": 2,
+            "capacity": 80
+        },
+        {
+            "id": 3,
+            "capacity": 90
+        },
+        {
+            "id": 4,
+            "capacity": 110
+        },
+        {
+            "id": 5,
+            "capacity": 80
+        },
+        {
+            "id": 6,
+            "capacity": 90
+        },
+        {
+            "id": 7,
+            "capacity": 100
+        },
+        {
+            "id": 8,
+            "capacity": 90
+        },
+        {
+            "id": 9,
+            "capacity": 90
+        }
+    ]
+}
