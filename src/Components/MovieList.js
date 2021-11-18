@@ -1,8 +1,9 @@
 import React from "react"
 import MovieDetails from "./MovieDetails"
+import { useSelector } from 'react-redux';
 
-const MovieList = ({movies}) => {
-    
+const MovieList = () => {
+    const movies = useSelector(state => state.movies);
     return (
         <div>
             {movies.map(movie => (
