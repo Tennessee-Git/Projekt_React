@@ -1,18 +1,18 @@
 import React, {useState} from 'react'
-import AddMovieForm from '../Components/Forms/AddMovieForm';
+import AddShowingForm from '../Components/Forms/AddShowingForm';
 import Popup from '../Components/Popup/Popup';
 
-function MoviesPage() {
+function ShowingsPage() {
     const [buttonPopup, setButtonPopup] = useState(false);
     return (
         <div>
             <div>
                 <div>
                     <br/>
-                    <h1>Lista filmów: </h1>
+                    <h1>Lista seansów: </h1>
                     <button onClick={() => setButtonPopup(true)}>Dodaj film</button>
                     <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
-                        <AddMovieForm/>
+                        <AddShowingForm/>
                     </Popup>
                 </div>
             </div>
@@ -20,4 +20,4 @@ function MoviesPage() {
     )
 }
 
-export default MoviesPage
+export default ShowingsPage

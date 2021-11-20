@@ -1,0 +1,56 @@
+.form-wrapper {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px;
+  }
+
+.form-inputs {
+    margin-bottom: 0.5rem;
+    width: 80%;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+label {
+    font-size: 1em;
+    margin-bottom: 0.5em;
+    margin-right: 0.25em;
+    color: #222;
+}
+
+input {
+    padding: 10px 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #cfcfcf;
+    margin-bottom: 0.5rem;
+}
+
+input::placeholder {
+    font-size: 1.2em;
+    font-weight: lighter;
+    color: #999;
+}
+
+.AddBtn {
+    color:white;
+    background-color: rgb(157, 153, 197);
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 4px;
+    width: 70px;
+    height: 30px;
+    border:none;
+    cursor: pointer;
+}
+
+.AddBtn:hover {
+    background-color: rgb(208, 205, 241);
+    transition: all 0.2s ease-out;
+}
