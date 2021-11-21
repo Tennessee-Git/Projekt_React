@@ -6,12 +6,12 @@
     position: relative;
     border: 0;
     display: block;
-  }
+}
 
 .movie-card img {
     width: 200px;
     display: block;
-  }
+}
 
 .movie-card .overlay {
     position: absolute;
@@ -21,22 +21,22 @@
     height: 100%;
     border: 2px solid transparent;
     transition: all 0.4s ease;
-  }
-  
-  .movie-card:hover .overlay {
+}
+
+.movie-card:hover .overlay {
     border: 3px solid rgb(109, 106, 133);
-  }
+}
 
-  .inner-card-controls{
-      opacity: 0;
-  }
+.inner-card-controls{
+    opacity: 0;
+}
 
-  .movie-card:hover .inner-card-controls {
+.movie-card:hover .inner-card-controls {
     opacity: 1;
     transition: all 0.4s ease;
-  }
+}
 
-  .ctrl-btn {
+.ctrl-btn {
     color: rgb(109, 106, 133);
     background-color: transparent;
     border-radius: 4px;
@@ -45,21 +45,21 @@
     font-size: 1.25rem;
     padding: 5px;
     margin: 0;
-  }
-  
-  .ctrl-btn:hover {
+}
+
+.ctrl-btn:hover {
     color: rgb(199, 39, 60);
     cursor: pointer;
-  }
+}
 
 .movie-title {
-      text-shadow:rgb(0, 0, 0) 1px 1px 5px;
-      color:white;
-      text-align: center;
-      position: absolute;
-      bottom: 5px;
-      left: 5px;
-      width: 190px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-  }
+    text-shadow:rgb(0, 0, 0) 1px 1px 5px;
+    color:white;
+    text-align: center;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    width: 190px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
