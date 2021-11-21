@@ -9,8 +9,7 @@ function ShowingsPage() {
             <div>
                 <div>
                     <br/>
-                    <h1>Lista seansów: </h1>
-                    <button onClick={() => setButtonPopup(true)}>Dodaj film</button>
+                    <h1>Lista seansów: <button onClick={() => setButtonPopup(true)}>Dodaj seans</button></h1>
                     <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
                         <AddShowingForm/>
                     </Popup>

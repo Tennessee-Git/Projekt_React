@@ -1,29 +1,37 @@
 import React, { Component } from 'react';
 import DatePicker from "react-datepicker";
+import Select from 'react-select';
 import "react-datepicker/dist/react-datepicker.css";
 import './Form.css';
+
+const rooms =[
+    {
+        label: "Sala 1", value:"1"
+    },
+    {
+        label:"Sala 2",value: "2"
+    }
+];
+
+const movies=[//tu trzeba by było pobrać z ShowAllMovies/GetAllMovies
+    {label: "test", value: "test"},
+    {label: "bruh", value: "bruh"},
+    {
+        label: "test2", value: "test2"
+    }
+];
 
 export default class AddShowingForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            movies:[//tu trzeba by było pobrać z ShowAllMovies/GetAllMovies
-                {
-                    title: "test"
-                },
-                {
-                    title: "bruh"
-                }
-            ],
-            rooms:[
-                {
-                    id: 1
-                },
-                {
-                    id: 2
-                }
-            ],
-            date : new Date()
+            date : new Date(),
+            selectedMovie: {
+                title: ""
+            },
+            selectedRoom:{
+                id: null
+            }
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -49,20 +57,20 @@ export default class AddShowingForm extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-inputs">
                         <label htmlFor='titleInput'>Film:</label>
-                        <select value={this.state.movies.title} onChange={(event) => this.handleChange(event)}>
-                        {this.state.movies.map(movie => (
-                            <option value={movie.title}>{movie.title}</option>
-                        ))}
-                        </select>
+                        <Select 
+                            defaultValue={movies[0]}
+                            isSearchable="true"
+                            options={movies}
+                        />
                         
                     </div >
                     <div className="form-inputs">
                         <label htmlFor='roomIdInput'>Numer sali:</label>
-                        <select value={this.state.rooms.id} onChange={(event) => this.handleChange(event)}>
-                            {this.state.rooms.map(room => (
-                                <option value={room.id}>{room.id}</option>
-                            ))}
-                        </select>
+                        <Select 
+                            defaultValue={rooms[0]}
+                            isSearchable="true"
+                            options={rooms}
+                        />
                     </div>
                     <div className="form-inputs">
                         <label>Data seansu:</label>
