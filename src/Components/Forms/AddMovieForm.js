@@ -49,7 +49,7 @@ export default class AddMovieForm extends Component {
                             placeholder='Podaj link do plakatu'
                             value = {this.state.imageURL}
                             onChange={(event) => this.handleChange(event)}/>
-                        <img />
+                        <img src={this.state.imageURL} width="200px" height="250px" alt="Podgląd plakatu"/>
                     </div>
                 </form>
                 <br/>

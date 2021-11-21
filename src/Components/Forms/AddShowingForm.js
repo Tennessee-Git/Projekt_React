@@ -3,6 +3,7 @@ import DatePicker from "react-datepicker";
 import Select from 'react-select';
 import "react-datepicker/dist/react-datepicker.css";
 import './Form.css';
+import { getAllRooms } from '../../Actions/actions';
 
 const rooms =[
     {
@@ -13,6 +14,13 @@ const rooms =[
     }
 ];
 
+// const rooms = [getAllRooms()];
+
+// const defaultRoom = {
+//     label: `Sala ${rooms[0].id}`, 
+//     value: `${rooms[0].id}`
+// }
+
 const movies=[//tu trzeba by było pobrać z ShowAllMovies/GetAllMovies
     {label: "test", value: "test"},
     {label: "bruh", value: "bruh"},
@@ -20,6 +28,16 @@ const movies=[//tu trzeba by było pobrać z ShowAllMovies/GetAllMovies
         label: "test2", value: "test2"
     }
 ];
+
+const customTheme = theme => ({
+    ...theme,
+    colors:{
+        ...theme.colors,
+        primary50: "#c8c8e0",
+        primary25: "#b3b3c9",
+        primary: "#656570"
+    }
+});
 
 export default class AddShowingForm extends Component {
     constructor(props) {
@@ -36,6 +54,8 @@ export default class AddShowingForm extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     };
+
+  
 
     handleChange = event => {
         this.setState({
@@ -58,17 +78,18 @@ export default class AddShowingForm extends Component {
                     <div className="form-inputs">
                         <label htmlFor='titleInput'>Film:</label>
                         <Select 
+                            theme={customTheme}
                             defaultValue={movies[0]}
-                            isSearchable="true"
+                            isSearchable
                             options={movies}
                         />
-                        
                     </div >
                     <div className="form-inputs">
                         <label htmlFor='roomIdInput'>Numer sali:</label>
                         <Select 
+                            theme={customTheme}
                             defaultValue={rooms[0]}
-                            isSearchable="true"
+                            isSearchable
                             options={rooms}
                         />
                     </div>

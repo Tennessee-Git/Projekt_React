@@ -2,42 +2,62 @@
     "sale":[
         {
             "id": 1,
+            "label": "Sala 1",
+            "value": 1,
             "capacity": 90
         },
         {
             "id": 2,
+            "label": "Sala 2",
+            "value": 2,
             "capacity": 100
         },
         {
             "id": 3,
+            "label": "Sala 3",
+            "value": 3,
             "capacity": 80
         },
         {
             "id": 4,
+            "label": "Sala 4",
+            "value": 4,
             "capacity": 90
         },
         {
             "id": 5,
+            "label": "Sala 5",
+            "value": 5,
             "capacity": 110
         },
         {
             "id": 6,
+            "label": "Sala 6",
+            "value": 6,
             "capacity": 80
         },
         {
             "id": 7,
+            "label": "Sala 7",
+            "value": 7,
             "capacity": 90
         },
         {
             "id": 8,
+            "label": "Sala 8",
+            "value": 8,
             "capacity": 100
         },
         {
             "id": 9,
+            "label": "Sala 9",
+            "value": 9,
             "capacity": 90
         },
         {
             "id": 10,
+            "label": "Sala 10",
+            "value": 10,
             "capacity": 90
         }
     ],

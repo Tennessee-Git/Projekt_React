@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+
 export const SHOW_ALL_MOVIES = 'SHOW_ALL_MOVIES'
 export const SELECT_MOVIE = 'SELECT_MOVIE'
 export const ADD_MOVIE = 'ADD_MOVIE'
@@ -14,6 +15,11 @@ const getMovieData = () => {
                 .then(res => res.data)
                 .catch(error => console.error('Error: ', error));
 };
+
+export const getAllRooms = async () => {
+    const res = await axios.get("http://localhost:3006/sale");
+    return res.data;
+}
 
 export const getAllMovies = () => (dispatch) =>{
 getMovieData().then(data=>{
@@ -36,16 +42,12 @@ export const selectMovieAction = id  => ({
 
 export const addMovieAction = (new_movie) => ({
     type: ADD_MOVIE,
-    payload:{
-        new_movie
-    }
+    payload: new_movie
 });
 
 export const removeMovieAction = id => ({
     type: REMOVE_MOVIE,
-    payload:{
-        id
-    }
+    payload: id
 });
 
 export const editMovieAction = id => ({
