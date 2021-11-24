@@ -3,7 +3,7 @@ import DatePicker from "react-datepicker";
 import Select from 'react-select';
 import "react-datepicker/dist/react-datepicker.css";
 import './Form.css';
-import { getAllRooms } from '../../Actions/actions';
+import axios from 'axios';
 
 const rooms =[
     {
@@ -14,20 +14,7 @@ const rooms =[
     }
 ];
 
-// const rooms = [getAllRooms()];
-
-// const defaultRoom = {
-//     label: `Sala ${rooms[0].id}`, 
-//     value: `${rooms[0].id}`
-// }
-
-const movies=[//tu trzeba by było pobrać z ShowAllMovies/GetAllMovies
-    {label: "test", value: "test"},
-    {label: "bruh", value: "bruh"},
-    {
-        label: "test2", value: "test2"
-    }
-];
+let movies = [];
 
 const customTheme = theme => ({
     ...theme,
@@ -43,25 +30,41 @@ export default class AddShowingForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            date : new Date(),
-            selectedMovie: {
-                title: ""
-            },
-            selectedRoom:{
-                id: null
-            }
-        }
+            startDate: "",
+            startTime: "",
+            selectedDate : new Date(),
+            isDateSelected: false,
+            selectedMovie: "",
+            selectedRoom: ""
+        };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDateChange = this.handleDateChange.bind(this);
     };
 
-  
+    // movies = axios.get("http://localhost:3006/filmy")
+    //     .then(response => { response.data;console.log(response.data);});
 
     handleChange = event => {
-        this.setState({
+        this.state({
             [event.target.name]: event.target.value
         });
         console.log("bruh");
+    }
+
+    handleDateChange = (date) => {
+        const dd = String(date.getDate()).padStart(2, "0");
+        const mm = String(date.getMonth() + 1).padStart(2, "0");
+        const yyyy = date.getFullYear();
+        this.setState({
+            startDate: dd + "." + mm + "." + yyyy,
+            startDate: date
+                .toString()
+                .split(" ")[4]
+                .substring(0, 5),
+                selectedDate: date,
+                isDateSelected: true
+        });
     }
 
     handleSubmit = event =>{
@@ -70,6 +73,7 @@ export default class AddShowingForm extends Component {
     }
 
     render() {
+        //const {movies,GetMovieData} = this.props;
         return (
             <div className="form-wrapper">
                 <h2>Wpisz informacje o seansie</h2>
@@ -77,32 +81,37 @@ export default class AddShowingForm extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-inputs">
                         <label htmlFor='titleInput'>Film:</label>
-                        <Select 
+                        <Select
+                            isClearable
                             theme={customTheme}
-                            defaultValue={movies[0]}
                             isSearchable
                             options={movies}
+
                         />
                     </div >
                     <div className="form-inputs">
                         <label htmlFor='roomIdInput'>Numer sali:</label>
-                        <Select 
+                        <Select
+                            isClearable
                             theme={customTheme}
-                            defaultValue={rooms[0]}
+                            getOptionLabel={option => `${option.label}`}
+                            getOptionValue={option => `${option.value}`}
                             isSearchable
                             options={rooms}
+                            
                         />
                     </div>
                     <div className="form-inputs">
                         <label>Data seansu:</label>
-                        {/* <DatePicker 
-                        selected={this.state.date}
-                        onChange={this.handleChange}
-                        showTimeSelect
-                        locale="pl"
+                        <DatePicker
                         name="date"
-                        dateFormat="dd/MM/RRRR hh:mm"
-                        /> */}
+                        selected={this.state.selectedDate}
+                        onChange={this.handleDateChange}
+                        showTimeSelect
+                        timeFormat="HH:mm"
+                        dateFormat="dd.MM.yyyy HH:mm"
+                        minDate={new Date()}
+                        />
                     </div>
                 </form>
                 <br/>

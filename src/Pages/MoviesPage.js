@@ -15,7 +15,7 @@ function MoviesPage() {
             <div>
                 <div>
                     <br/>
-                    <h1>Lista filmów: <button className="addButton" onClick={() => setButtonPopup(true)}>Dodaj film</button></h1>
+                    <h1>Lista filmów: <button className="AddBtn" onClick={() => setButtonPopup(true)}>Dodaj film</button></h1>
                     
                     <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
                         <AddMovieForm/>

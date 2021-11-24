@@ -66,7 +66,10 @@
            "id" : 1,
            "title" : "Test1",
            "imageURL": "testURL",
-           "length": 120
+           "length": 120,
+           "label": "Test1",
+           "value": "Test1",
+           "popularity": 0
        }
     ]
 }
