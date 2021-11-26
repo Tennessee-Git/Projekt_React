@@ -1,8 +1,9 @@
 import React from 'react';
 import {useParams}  from 'react-router-dom';
 import EditShowingForm from './Forms/EditShowingForm';
+import PropTypes from "prop-types";
 
-export default function GetMovieId() {
+export default function GetShowingId() {
     const {id} = useParams();
     console.log(id);
     
@@ -11,4 +12,8 @@ export default function GetMovieId() {
             <EditShowingForm id={id} />
         </div>
     )
+}
+
+GetShowingId.propTypes = {
+    id: PropTypes.number.isRequired
 }
