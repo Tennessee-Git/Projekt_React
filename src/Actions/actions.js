@@ -9,29 +9,27 @@ export const EDIT_SHOWING = 'EDIT_SHOWING'
 
 export const showAllMoviesAction = (data) =>({
     type: SHOW_ALL_MOVIES,
-    payload: data
+    movies: data
 });
 
 export const selectMovieAction = id  => ({
         type: SELECT_MOVIE,
-        payload: id
+        id
 });
 
 export const addMovieAction = (new_movie) => ({
     type: ADD_MOVIE,
-    payload: new_movie
+    new_movie
 });
 
 export const removeMovieAction = id => ({
     type: REMOVE_MOVIE,
-    payload: id
+    id
 });
 
-export const editMovieAction = id => ({
+export const editMovieAction = (updated_movie) => ({
     type: EDIT_MOVIE,
-    payload:{
-        id
-    }
+    updated_movie
 })
 
 // export function showAllMovies(){

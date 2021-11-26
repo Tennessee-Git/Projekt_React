@@ -3,18 +3,7 @@ import DatePicker from "react-datepicker";
 import Select from 'react-select';
 import "react-datepicker/dist/react-datepicker.css";
 import './Form.css';
-import axios from 'axios';
-
-const rooms =[
-    {
-        label: "Sala 1", value:"1"
-    },
-    {
-        label:"Sala 2",value: "2"
-    }
-];
-
-let movies = [];
+import {getMovies, getRooms} from '../../api/api';
 
 const customTheme = theme => ({
     ...theme,
@@ -30,6 +19,8 @@ export default class AddShowingForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            movies:[],
+            rooms:[],
             startDate: "",
             startTime: "",
             selectedDate : new Date(),
@@ -40,10 +31,24 @@ export default class AddShowingForm extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDateChange = this.handleDateChange.bind(this);
+        this.handleMovieChange = this.handleMovieChange.bind(this);
     };
 
-    // movies = axios.get("http://localhost:3006/filmy")
-    //     .then(response => { response.data;console.log(response.data);});
+    async componentDidMount(){
+        const data = await getMovies();
+        const data2 = await getRooms();
+
+        this.setState({movies: data, rooms: data2})
+        console.log(this.state.movies);
+        console.log(this.state.rooms);
+    }
+
+    handleMovieChange = event =>{
+        this.setState({
+            selectedMovie: event.target.value
+        });
+        console.log(this.state.selectedMovie);
+    }
 
     handleChange = event => {
         this.state({
@@ -53,11 +58,7 @@ export default class AddShowingForm extends Component {
     }
 
     handleDateChange = (date) => {
-        const dd = String(date.getDate()).padStart(2, "0");
-        const mm = String(date.getMonth() + 1).padStart(2, "0");
-        const yyyy = date.getFullYear();
         this.setState({
-            startDate: dd + "." + mm + "." + yyyy,
             startDate: date
                 .toString()
                 .split(" ")[4]
@@ -73,7 +74,6 @@ export default class AddShowingForm extends Component {
     }
 
     render() {
-        //const {movies,GetMovieData} = this.props;
         return (
             <div className="form-wrapper">
                 <h2>Wpisz informacje o seansie</h2>
@@ -84,21 +84,22 @@ export default class AddShowingForm extends Component {
                         <Select
                             isClearable
                             theme={customTheme}
+                            options={this.state.movies}
+                            getOptionLabel={option => `${option.label}`}
+                            getOptionValue={option => `${option.value}`}
+                            onChange={this.handleChange}
                             isSearchable
-                            options={movies}
-
                         />
                     </div >
                     <div className="form-inputs">
-                        <label htmlFor='roomIdInput'>Numer sali:</label>
+                        <label htmlFor='roomIdInput'>Sala:</label>
                         <Select
                             isClearable
                             theme={customTheme}
                             getOptionLabel={option => `${option.label}`}
                             getOptionValue={option => `${option.value}`}
                             isSearchable
-                            options={rooms}
-                            
+                            options={this.state.rooms}
                         />
                     </div>
                     <div className="form-inputs">

@@ -1,75 +1,141 @@
 {
-    "sale":[
-        {
-            "id": 1,
-            "label": "Sala 1",
-            "value": 1,
-            "capacity": 90
-        },
-        {
-            "id": 2,
-            "label": "Sala 2",
-            "value": 2,
-            "capacity": 100
-        },
-        {
-            "id": 3,
-            "label": "Sala 3",
-            "value": 3,
-            "capacity": 80
-        },
-        {
-            "id": 4,
-            "label": "Sala 4",
-            "value": 4,
-            "capacity": 90
-        },
-        {
-            "id": 5,
-            "label": "Sala 5",
-            "value": 5,
-            "capacity": 110
-        },
-        {
-            "id": 6,
-            "label": "Sala 6",
-            "value": 6,
-            "capacity": 80
-        },
-        {
-            "id": 7,
-            "label": "Sala 7",
-            "value": 7,
-            "capacity": 90
-        },
-        {
-            "id": 8,
-            "label": "Sala 8",
-            "value": 8,
-            "capacity": 100
-        },
-        {
-            "id": 9,
-            "label": "Sala 9",
-            "value": 9,
-            "capacity": 90
-        },
-        {
-            "id": 10,
-            "label": "Sala 10",
-            "value": 10,
-            "capacity": 90
-        }
-    ],
-    "filmy":[
-       {
-           "id" : 1,
-           "title" : "Test1",
-           "imageURL": "testURL",
-           "length": 120,
-           "label": "Test1",
-           "value": "Test1",
-           "popularity": 0
-       }
-    ]
+  "sale": [
+    {
+      "id": 1,
+      "label": "Sala 1",
+      "value": 1,
+      "capacity": 90
+    },
+    {
+      "id": 2,
+      "label": "Sala 2",
+      "value": 2,
+      "capacity": 100
+    },
+    {
+      "id": 3,
+      "label": "Sala 3",
+      "value": 3,
+      "capacity": 80
+    },
+    {
+      "id": 4,
+      "label": "Sala 4",
+      "value": 4,
+      "capacity": 90
+    },
+    {
+      "id": 5,
+      "label": "Sala 5",
+      "value": 5,
+      "capacity": 110
+    },
+    {
+      "id": 6,
+      "label": "Sala 6",
+      "value": 6,
+      "capacity": 80
+    },
+    {
+      "id": 7,
+      "label": "Sala 7",
+      "value": 7,
+      "capacity": 90
+    },
+    {
+      "id": 8,
+      "label": "Sala 8",
+      "value": 8,
+      "capacity": 100
+    },
+    {
+      "id": 9,
+      "label": "Sala 9",
+      "value": 9,
+      "capacity": 90
+    },
+    {
+      "id": 10,
+      "label": "Sala 10",
+      "value": 10,
+      "capacity": 90
+    }
+  ],
+  "filmy": [
+    {
+      "title": "Test1",
+      "imageURL": "https://cdn11.bigcommerce.com/s-ydriczk/images/stencil/1280x1280/products/89058/93685/Joker-2019-Final-Style-steps-Poster-buy-original-movie-posters-at-starstills__62518.1572351179.jpg?c=2",
+      "length": "104",
+      "label": "Test1",
+      "value": "Test1",
+      "id": 1
+    },
+    {
+      "title": "test2",
+      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Test-Logo.svg/783px-Test-Logo.svg.png",
+      "length": "125",
+      "label": "test2",
+      "value": "test2",
+      "id": 2
+    },
+    {
+      "title": "aasd",
+      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Test-Logo.svg/783px-Test-Logo.svg.png",
+      "length": "445",
+      "label": "aasd",
+      "value": "aasd",
+      "popularity": 0,
+      "id": 3
+    },
+    {
+      "title": "test3",
+      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Test.svg",
+      "length": "12312",
+      "label": "test3",
+      "value": "test3",
+      "popularity": 0,
+      "id": 4
+    },
+    {
+      "title": "teststst",
+      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Test-Logo.svg/783px-Test-Logo.svg.png",
+      "length": "455",
+      "label": "teststst",
+      "value": "teststst",
+      "popularity": 0,
+      "id": 5
+    },
+    {
+      "title": "asdas",
+      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Test.svg",
+      "length": "121",
+      "label": "asdas",
+      "value": "asdas",
+      "popularity": 0,
+      "id": 6
+    }
+  ],
+  "seanse": [
+    {
+      "date": "27.11.2021 19:00",
+      "movieTitle": "Test1",
+      "movieId": 1,
+      "roomId": 1,
+      "id": 1
+    },
+    {
+      "date": "28.11.2021 19:00",
+      "movieTitle": "Test2",
+      "movieId": 2,
+      "roomId": 2,
+      "id": 2
+    }
+  ],
+  "rezerwacje": [
+    {
+      "id": 1,
+      "seansId": 1,
+      "seatCode": "A-1"
+    }
+  ]
 }

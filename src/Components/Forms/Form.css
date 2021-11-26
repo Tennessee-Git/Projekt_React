@@ -2,18 +2,21 @@
     width: 400px;
     display: flex;
     flex-direction: column;
+    justify-content: left;
     padding: 20px 40px;
   }
 
 .form-inputs {
-    margin-bottom: 0.5rem;
-    width: 80%;
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: left;
 }
 
 form {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: left;
 }
 

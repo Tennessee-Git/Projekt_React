@@ -4,8 +4,9 @@ import Footer from './Components/Footer/Footer';
 import {Routes, Route} from 'react-router-dom';
 import HomePage from "./Pages/HomePage"
 import MoviesPage from './Pages/MoviesPage';
-import AddMovieForm from './Components/Forms/AddMovieForm';
 import ShowingsPage from './Pages/ShowingsPage';
+import GetMovieId from './Components/GetMovieId';
+import GetShowingId from './Components/GetShowingId';
 
 function App() {
   return (
@@ -16,7 +17,9 @@ function App() {
         <Route path="/" exact element={<HomePage/>}/>
         <Route path="/seanse"  exact element={<ShowingsPage/>}/>
         <Route path="/filmy" exact element={<MoviesPage/>}/>
-        <Route path="/addMovie" exact element={<AddMovieForm/>}/>
+        <Route exact path="/edytujFilm/:id" element={<GetMovieId/>}/>
+        <Route path='/edytujSeans/:id' element={<GetShowingId/>}/>
+        {/* <Route path='/rezerwuj/:seansId/:id' element={}/> */}
       </Routes>
           </div>
           <Footer/>

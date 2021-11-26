@@ -1,0 +1,41 @@
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+@media (min-width: 992px) {
+  .movie-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.heading {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.card-container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .card-container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .card-container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-container {
+    width: 1170px;
+  }
+}

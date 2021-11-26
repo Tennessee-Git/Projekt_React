@@ -1,7 +1,7 @@
 .movie-card {
     width: 200px;
     height: 250px;
-    border-radius: 5px;
+    border-radius: 10px;
     overflow: hidden;
     position: relative;
     border: 0;
@@ -9,7 +9,9 @@
 }
 
 .movie-card img {
+    width: auto;
     max-width: 200px;
+    height: auto;
     max-height: 250px;
     display: block;
 }
@@ -25,7 +27,7 @@
 }
 
 .movie-card:hover .overlay {
-    border: 3px solid rgb(109, 106, 133);
+    border: 5px solid rgb(109, 106, 133);
 }
 
 .inner-card-controls{
@@ -37,11 +39,21 @@
     transition: all 0.4s ease;
 }
 
+.showing-details {
+    display: block;
+    text-align: center;
+    justify-content: center;
+    background-color: rgb(220, 218, 253); 
+    width: 200px;
+    height: 250px;
+}
+
 .ctrl-btn {
-    color: rgb(109, 106, 133);
+    color: rgb(255, 255, 255);
     background-color: transparent;
     border-radius: 4px;
-    border: rgb(255, 255, 255);
+    text-shadow:rgb(0, 0, 0) 1px 1px 5px;
+    border-color: transparent;
     transition: all 0.4s ease;
     font-size: 1.25rem;
     padding: 5px;
@@ -49,16 +61,42 @@
 }
 
 .ctrl-btn:hover {
-    color: rgb(199, 39, 60);
+    color: rgb(60, 58, 77);
+    text-shadow:rgb(255, 255, 255) 1px 1px 5px;
     cursor: pointer;
 }
 
 .movie-title {
     text-shadow:rgb(0, 0, 0) 1px 1px 5px;
+    color:rgb(255, 255, 255);
+    background-color: transparent;
+    text-align: center;
+    position: absolute;
+    bottom: 120px;
+    left: 5px;
+    width: 190px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.showing-date {
+    text-shadow:rgb(0, 0, 0) 1px 1px 5px;
     color:white;
     text-align: center;
     position: absolute;
-    bottom: 5px;
+    bottom: 160px;
+    left: 5px;
+    width: 190px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.showing-room {
+    text-shadow:rgb(0, 0, 0) 1px 1px 5px;
+    color:white;
+    text-align: center;
+    position: absolute;
+    bottom: 80px;
     left: 5px;
     width: 190px;
     overflow: hidden;
