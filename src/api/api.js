@@ -8,13 +8,22 @@ export const getMovies = async () => { //działa
     return response.data;
   }
 
+export const getMovieCount = async () => { //działa
+    const response = await axios.get("/filmy");
+    let data = response.data;
+    console.log(data);
+    let number = data.length;
+    console.log(number);
+    return number;
+}
+
 export const addMovie = (new_movie) => { //działa
     const request = {
         ...new_movie
     }
     return axios.post("/filmy", request)
        .then(response => {
-          console.log("Add: ", response);
+          console.log("Add film: ", response);
           return response;
        }).catch(err => {
           if (err.response.status === 304) console.log("Duplicate data -", new_movie);
@@ -34,7 +43,8 @@ export const addMovie = (new_movie) => { //działa
         });
 }
 
-export const editMovie = (movie) => {
+export const editMovie = (movie) => { //działa
+    movie.value = movie.id;
     return axios.put(`/filmy/${movie.id}`, movie)
         .then((response) => {
             console.log("Edit: ", response);
@@ -45,7 +55,7 @@ export const editMovie = (movie) => {
         });
 }
 
-export const getMovieById = (id) => {
+export const getMovieById = (id) => { //działa
     return axios.get('filmy/' + id)
         .then((response) => {
             return response.data;})
@@ -62,13 +72,38 @@ export const getShowings = async () => {
     return response.data;
 }
 
-export const editShowing = (showing) => {
+export const addShowing = (new_showing) => { //działa
+    const request = {
+        ...new_showing
+    }
+    return axios.post("/seanse", request)
+       .then(response => {
+          console.log("Add seans: ", response);
+          return response;
+       }).catch(err => {
+          if (err.response.status === 304) console.log("Duplicate data -", new_showing);
+          else console.log(err);
+          return err.response;
+       });
+ }
+
+export const editShowing = (showing) => { //chyba działa
     return axios.put(`/seanse/${showing.id}`, showing)
         .then((response) => {
             console.log("Edit: ", response);
             return response;
         })
         .catch((error) => {
+            return error;
+        });
+}
+
+export const getShowingById = (id) => { //działa
+    return axios.get('seanse/' + id)
+        .then((response) => {
+            return response.data;})
+        .catch((error) => {
+            console.error('Error: ', error);
             return error;
         });
 }

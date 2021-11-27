@@ -15,5 +15,5 @@ export default function GetMovieId() {
 }
 
 GetMovieId.propTypes = {
-    id: PropTypes.number.isRequired
+    id: PropTypes.number
 }

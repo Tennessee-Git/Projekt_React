@@ -3,7 +3,7 @@ import DatePicker from "react-datepicker";
 import Select from 'react-select';
 import "react-datepicker/dist/react-datepicker.css";
 import './Form.css';
-import {getMovies, getRooms} from '../../api/api';
+import {addShowing, getMovies, getRooms} from '../../api/api';
 
 const customTheme = theme => ({
     ...theme,
@@ -26,12 +26,14 @@ export default class AddShowingForm extends Component {
             selectedDate : new Date(),
             isDateSelected: false,
             selectedMovie: "",
+            selectedMovieTitle:"",
             selectedRoom: ""
         };
-        this.handleChange = this.handleChange.bind(this);
+
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDateChange = this.handleDateChange.bind(this);
         this.handleMovieChange = this.handleMovieChange.bind(this);
+        this.handleRoomChange = this.handleRoomChange.bind(this);
     };
 
     async componentDidMount(){
@@ -39,22 +41,19 @@ export default class AddShowingForm extends Component {
         const data2 = await getRooms();
 
         this.setState({movies: data, rooms: data2})
-        console.log(this.state.movies);
-        console.log(this.state.rooms);
     }
 
-    handleMovieChange = event =>{
+    handleMovieChange= event =>{
         this.setState({
-            selectedMovie: event.target.value
+            selectedMovie: event.value,
+            selectedMovieTitle: event.label
         });
-        console.log(this.state.selectedMovie);
     }
 
-    handleChange = event => {
-        this.state({
-            [event.target.name]: event.target.value
+    handleRoomChange = event => {
+        this.setState({
+            selectedRoom: event.value
         });
-        console.log("bruh");
     }
 
     handleDateChange = (date) => {
@@ -69,8 +68,14 @@ export default class AddShowingForm extends Component {
     }
 
     handleSubmit = event =>{
- // TO DO: send to json server via axios / use redux ;_;
-        console.log("test");
+        let new_showing = {
+            date: this.state.selectedDate,
+            movieId: Number(this.state.selectedMovie),
+            roomId: Number(this.state.selectedRoom),
+            movieTitle: this.state.selectedMovieTitle
+        }
+        console.log(new_showing);
+        addShowing(new_showing);
     }
 
     render() {
@@ -80,26 +85,25 @@ export default class AddShowingForm extends Component {
                 <br/>
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-inputs">
-                        <label htmlFor='titleInput'>Film:</label>
+                        <label>Film:</label>
                         <Select
-                            isClearable
+                            isSearchable
                             theme={customTheme}
                             options={this.state.movies}
-                            getOptionLabel={option => `${option.label}`}
-                            getOptionValue={option => `${option.value}`}
-                            onChange={this.handleChange}
-                            isSearchable
+                            getOptionLabel={(option) => `${option.label}`}
+                            onChange={this.handleMovieChange}
+                            placeholder="Wybierz film"
                         />
                     </div >
                     <div className="form-inputs">
-                        <label htmlFor='roomIdInput'>Sala:</label>
+                        <label>Sala:</label>
                         <Select
-                            isClearable
-                            theme={customTheme}
-                            getOptionLabel={option => `${option.label}`}
-                            getOptionValue={option => `${option.value}`}
                             isSearchable
+                            theme={customTheme}
                             options={this.state.rooms}
+                            getOptionLabel={(option) => `${option.label}`}
+                            onChange={this.handleRoomChange}
+                            placeholder="Wybierz salę"
                         />
                     </div>
                     <div className="form-inputs">

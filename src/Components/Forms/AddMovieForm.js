@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { addMovie } from '../../api/api';
+import { addMovie, getMovieCount } from '../../api/api';
 import './Form.css'
 
 export default class AddMovieForm extends Component {
@@ -8,26 +8,31 @@ export default class AddMovieForm extends Component {
         this.state = {
             title: '',
             imageURL: '',
-            length:null
+            length:0,
+            value:0
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     };
 
+    async componentDidMount() {
+        this.state.value = await getMovieCount() + 1;
+        console.log(this.state.value);
+    }
+
     handleChange = event => {
         this.setState({
             [event.target.name]: event.target.value
         });
-        console.log(this.state.imageURL);
     }
 
     handleSubmit = event =>{
         let new_movie = {
             title: this.state.title,
             imageURL: this.state.imageURL,
-            length: this.state.length,
+            length: Number(this.state.length),
             label: this.state.title,
-            value: this.state.title,
+            value: this.state.value,
             popularity: 0
         };
         addMovie(new_movie);

@@ -65,62 +65,89 @@
     {
       "title": "Test1",
       "imageURL": "https://cdn11.bigcommerce.com/s-ydriczk/images/stencil/1280x1280/products/89058/93685/Joker-2019-Final-Style-steps-Poster-buy-original-movie-posters-at-starstills__62518.1572351179.jpg?c=2",
-      "length": "104",
+      "length": 104,
       "label": "Test1",
-      "value": "Test1",
+      "value": 1,
       "id": 1
     },
     {
       "title": "test2",
       "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Test-Logo.svg/783px-Test-Logo.svg.png",
-      "length": "125",
+      "length": 125,
       "label": "test2",
-      "value": "test2",
+      "value": 2,
       "id": 2
     },
     {
       "title": "aasd",
       "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Test-Logo.svg/783px-Test-Logo.svg.png",
-      "length": "445",
+      "length": 445,
       "label": "aasd",
-      "value": "aasd",
+      "value": 3,
       "popularity": 0,
       "id": 3
     },
     {
       "title": "test3",
       "imageURL": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Test.svg",
-      "length": "12312",
+      "length": 12312,
       "label": "test3",
-      "value": "test3",
+      "value": 4,
       "popularity": 0,
       "id": 4
     },
     {
       "title": "teststst",
       "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Test-Logo.svg/783px-Test-Logo.svg.png",
-      "length": "455",
+      "length": 455,
       "label": "teststst",
-      "value": "teststst",
+      "value": 5,
       "popularity": 0,
       "id": 5
     },
     {
       "title": "asdas",
       "imageURL": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Test.svg",
-      "length": "121",
+      "length": 121,
       "label": "asdas",
-      "value": "asdas",
+      "value": 6,
       "popularity": 0,
       "id": 6
+    },
+    {
+      "title": "bruh",
+      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Test.svg",
+      "length": 69,
+      "label": "bruh",
+      "value": 7,
+      "popularity": 0,
+      "id": 7
+    },
+    {
+      "title": "asdasd",
+      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Test.svg",
+      "length": 6969,
+      "label": "asdasd",
+      "value": 8,
+      "popularity": 0,
+      "id": 8
+    },
+    {
+      "title": "jjjj",
+      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Test.svg",
+      "length": 157,
+      "label": "jjjj",
+      "value": 9,
+      "popularity": 0,
+      "id": 9
     }
   ],
   "seanse": [
     {
-      "date": "27.11.2021 19:00",
-      "movieTitle": "Test1",
-      "movieId": 1,
-      "roomId": 1,
+      "date": "2021-11-27T12:28:40.544Z",
+      "movieId": 3,
+      "roomId": 3,
+      "movieTitle": "aasd",
       "id": 1
     },
     {
@@ -129,6 +156,13 @@
       "movieId": 2,
       "roomId": 2,
       "id": 2
+    },
+    {
+      "date": "2021-12-03T12:02:47.000Z",
+      "movieId": 2,
+      "roomId": 3,
+      "movieTitle": "test2",
+      "id": 3
     }
   ],
   "rezerwacje": [

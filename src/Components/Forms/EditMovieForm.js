@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Navigate } from 'react-router-dom';
 import { editMovie, getMovieById } from '../../api/api';
 
 export default class EditMovieForm extends Component {
@@ -24,7 +23,6 @@ export default class EditMovieForm extends Component {
         this.setState({
             [event.target.name]: event.target.value
         });
-        console.log(this.state.imageURL);
     }
 
     handleSubmit = event =>{
@@ -33,7 +31,7 @@ export default class EditMovieForm extends Component {
             imageURL: this.state.imageURL,
             length: this.state.length,
             label: this.state.title,
-            value: this.state.title,
+            value: this.state.id,
             id: this.state.id
         };
         editMovie(updated_movie);
@@ -76,7 +74,7 @@ export default class EditMovieForm extends Component {
                             onChange={(event) => this.handleChange(event)}/>
                     </div>
                 </form>
-                <button className="AddBtn" onClick={this.handleSubmit}>Dodaj</button>
+                <button className="AddBtn" onClick={this.handleSubmit}>Edytuj</button>
             </div>
         )
     }
