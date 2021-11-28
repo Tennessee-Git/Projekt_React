@@ -1,8 +1,8 @@
 .form-wrapper {
-    width: 400px;
+    width: 600px;
     display: flex;
     flex-direction: column;
-    justify-content: left;
+    justify-content: center;
     padding: 20px 40px;
   }
 
@@ -10,6 +10,16 @@
     margin-bottom: 15px;
     width: 100%;
     text-align: left;
+    display:flex;
+    flex-direction:column;
+}
+
+.form-inputs-small {
+    margin-bottom: 15px;
+    width: 200px;
+    text-align: left;
+    display:flex;
+    flex-direction:column;
 }
 
 form {
@@ -17,7 +27,7 @@ form {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: left;
+    justify-content: center;
 }
 
 label {
@@ -56,4 +66,20 @@ input::placeholder {
 .AddBtn:hover {
     background-color: rgb(208, 205, 241);
     transition: all 0.2s ease-out;
+}
+
+.error-msg{
+    color:red;
+    font-size:small;
+}
+
+.inline-images{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.inline-image{
+    margin-right: 20px;
 }

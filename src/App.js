@@ -18,8 +18,8 @@ function App() {
         <Route path="/seanse"  exact element={<ShowingsPage/>}/>
         <Route path="/filmy" exact element={<MoviesPage/>}/>
         <Route exact path="/edytujFilm/:id" element={<GetMovieId/>}/>
-        <Route path='/edytujSeans/:id' element={<GetShowingId/>}/>
-        {/* <Route path='/rezerwuj/:seansId/:id' element={}/> */}
+        <Route path='/edytujSeans/:id' element={<GetShowingId type="edit"/>}/>
+        <Route path='/rezerwuj/:id' element={<GetShowingId type="reservation"/>}/>
       </Routes>
           </div>
           <Footer/>

@@ -7,8 +7,11 @@ export default class EditMovieForm extends Component {
         this.state = {
             title: '',
             imageURL: '',
-            length:0,
-            id:this.props.id
+            length:null,
+            id:this.props.id,
+            oldTitle:"",
+            oldimageURL:"",
+            oldlength:null
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -16,7 +19,7 @@ export default class EditMovieForm extends Component {
 
     async componentDidMount(){
         const data = await getMovieById(this.state.id);
-        this.setState({title: data.title, imageURL: data.imageURL, length:data.length})
+        this.setState({oldTitle: data.title, oldimageURL: data.imageURL, oldlength:data.length})
     }
 
     handleChange = event => {
@@ -25,16 +28,57 @@ export default class EditMovieForm extends Component {
         });
     }
 
+    formValidation = () => {
+        const {title, imageURL, length} = this.state;
+        let isValid = true;
+        const errors ={};
+        if(title.trim().length < 5 )
+        {
+            errors.titleLength = "Tytuł filmu musi mieć co najmniej 5 liter!";
+            isValid = false;
+        }
+        if( length <= 30 )
+        {
+            errors.movieLength = "Filmy musi trwać co najmniej 30 minut!";
+            isValid = false;
+        }
+        if( imageURL.trim().length < 10)
+        {
+            errors.imageURLlength = "Link do plakatu musi mieć co najmniej 10 liter!";
+            isValid = false;
+        }
+        this.setState({errors});
+        return isValid;
+    }
+
     handleSubmit = event =>{
-        let updated_movie = {
-            title: this.state.title,
-            imageURL: this.state.imageURL,
-            length: this.state.length,
-            label: this.state.title,
-            value: this.state.id,
-            id: this.state.id
-        };
-        editMovie(updated_movie);
+        if(this.state.title !=="" && this.state.imageURL !== "" && this.state.length !==null)
+        {
+            const isValid = this.formValidation();
+            if(isValid){
+                let updated_movie = {
+                    title: this.state.title,
+                    imageURL: this.state.imageURL,
+                    length: this.state.length,
+                    label: this.state.title,
+                    value: this.state.id,
+                    id: this.state.id
+                };
+                editMovie(updated_movie);
+            }
+        }
+        else {if(this.state.title ==="" && this.state.imageURL === "" && this.state.length ===null)
+        {
+            let updated_movie = {
+                title: this.state.oldTitle,
+                imageURL: this.state.oldimageURL,
+                length: this.state.oldlength,
+                label: this.state.oldTitle,
+                value: this.state.id,
+                id: this.state.id
+            };
+            editMovie(updated_movie);
+        }}
     };
 
     render() {
@@ -44,7 +88,7 @@ export default class EditMovieForm extends Component {
                 <br/>
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-inputs">
-                        <label htmlFor='editTitleInput'>Tytuł:</label>
+                        <label>Aktualny tytuł: {this.state.oldTitle}</label>
                         <input 
                             id='edittitleInput'
                             name='title'
@@ -54,7 +98,7 @@ export default class EditMovieForm extends Component {
                             onChange={(event) => this.handleChange(event)}/>
                     </div>
                     <div className="form-inputs">
-                        <label htmlFor='imageURLInput'>Link do plakatu:</label>
+                        <label>Link do plakatu:</label>
                         <input
                             id='imageURLInput'
                             name='imageURL'
@@ -63,8 +107,12 @@ export default class EditMovieForm extends Component {
                             value = {this.state.imageURL}
                             onChange={(event) => this.handleChange(event)}/>
                     </div>
+                    <div className="inline-images">
+                        <img src={this.state.oldimageURL} width="200px" height="250px" className="inline-image" alt="Podgląd plakatu"/>
+                        <img src={this.state.imageURL} width="200px" height="250px" className="inline-image" alt="Podgląd nowego plakatu"/>
+                    </div>
                     <div className="form-inputs">
-                        <label htmlFor='lengthInput'>Długość(min):</label>
+                        <label>Aktualna długość(min): {this.state.oldlength}</label>
                         <input
                             id='lengthInput'
                             name='length'

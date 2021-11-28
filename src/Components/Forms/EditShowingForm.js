@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import DatePicker from "react-datepicker";
 import Select from 'react-select';
+import {editShowing, getMovies, getRooms, getShowingById} from '../../api/api';
+import moment from 'moment';
 import "react-datepicker/dist/react-datepicker.css";
 import './Form.css';
-import {editShowing, getMovies, getRooms, getShowingById} from '../../api/api';
 
 const customTheme = theme => ({
     ...theme,
@@ -24,11 +25,14 @@ export default class EditShowingForm extends Component {
             rooms:[],
             startDate: "",
             startTime: "",
-            selectedDate : new Date(),
+            selectedDate : "",
             isDateSelected: false,
             selectedMovie: "",
             selectedMovieTitle:"",
-            selectedRoom: ""
+            selectedRoom: "",
+            oldMovieTitle:"",
+            oldRoom:"",
+            oldDate:""
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -43,7 +47,9 @@ export default class EditShowingForm extends Component {
         const showingData = await getShowingById(this.state.showingId);
         console.log(showingData);
         this.setState({movies: data, rooms: data2, 
-            selectedMovie: showingData.movieId, selectedRoom: showingData.roomId, selectedMovieTitle: showingData.movieTitle});
+            selectedMovie: showingData.movieId, selectedRoom: showingData.roomId, selectedMovieTitle: showingData.movieTitle,
+            oldMovieTitle: showingData.movieTitle, oldRoom: showingData.roomId, oldDate: showingData.date
+        });
         console.log(this.state);
     }
 
@@ -73,7 +79,7 @@ export default class EditShowingForm extends Component {
 
     handleSubmit = event =>{
         let updated_showing = {
-            date: this.state.selectedDate,
+            date: moment(this.state.selectedDate).format('DD-MM-YYYY HH:mm'),
             movieId: Number(this.state.selectedMovie),
             roomId: Number(this.state.selectedRoom),
             movieTitle: this.state.selectedMovieTitle,
@@ -90,29 +96,29 @@ export default class EditShowingForm extends Component {
                 <br/>
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-inputs">
-                        <label>Film:</label>
+                        <label>Aktualny film: {this.state.oldMovieTitle}</label>
                         <Select
                             isSearchable
                             theme={customTheme}
                             options={this.state.movies}
                             getOptionLabel={(option) => `${option.label}`}
                             onChange={this.handleMovieChange}
-                            placeholder="Wybierz film"
+                            placeholder="Wybierz nowy film"
                         />
                     </div >
                     <div className="form-inputs">
-                        <label>Sala:</label>
+                        <label>Aktualna sala: {this.state.oldRoom}</label>
                         <Select
                             isSearchable
                             theme={customTheme}
                             options={this.state.rooms}
                             getOptionLabel={(option) => `${option.label}`}
                             onChange={this.handleRoomChange}
-                            placeholder="Wybierz salę"
+                            placeholder="Wybierz nową salę"
                         />
                     </div>
                     <div className="form-inputs">
-                        <label>Data seansu:</label>
+                        <label>Aktualna data seansu: {this.state.oldDate}</label>
                         <DatePicker
                         name="date"
                         selected={this.state.selectedDate}
@@ -121,6 +127,7 @@ export default class EditShowingForm extends Component {
                         timeFormat="HH:mm"
                         dateFormat="dd.MM.yyyy HH:mm"
                         minDate={new Date()}
+                        placeholderText="Wybierz nową datę"
                         />
                     </div>
                 </form>

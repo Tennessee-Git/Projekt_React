@@ -75,7 +75,7 @@
       "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Test-Logo.svg/783px-Test-Logo.svg.png",
       "length": 125,
       "label": "test2",
-      "value": 2,
+      "value": "2",
       "id": 2
     },
     {
@@ -144,13 +144,6 @@
   ],
   "seanse": [
     {
-      "date": "2021-11-27T12:28:40.544Z",
-      "movieId": 3,
-      "roomId": 3,
-      "movieTitle": "aasd",
-      "id": 1
-    },
-    {
       "date": "28.11.2021 19:00",
       "movieTitle": "Test2",
       "movieId": 2,
@@ -158,11 +151,32 @@
       "id": 2
     },
     {
-      "date": "2021-12-03T12:02:47.000Z",
+      "date": "28-11-2021 14:00",
+      "movieId": 3,
+      "roomId": 2,
+      "movieTitle": "aasd",
+      "id": 7
+    },
+    {
+      "date": "28-11-2021 14:16",
+      "movieId": 1,
+      "roomId": 1,
+      "movieTitle": "Test1",
+      "id": 8
+    },
+    {
+      "date": "28-11-2021 14:17",
+      "movieId": 1,
+      "roomId": 2,
+      "movieTitle": "Test1",
+      "id": 9
+    },
+    {
+      "date": "28-11-2021 14:17",
       "movieId": 2,
-      "roomId": 3,
+      "roomId": 2,
       "movieTitle": "test2",
-      "id": 3
+      "id": 10
     }
   ],
   "rezerwacje": [

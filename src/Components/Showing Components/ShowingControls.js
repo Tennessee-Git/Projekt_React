@@ -12,9 +12,12 @@ const ShowingControls = ({id}) => {
                     <i className="far fa-edit"></i>
                 </button>
             </Link>
-                <button className="ctrl-btn">
+            <Link to={`/rezerwuj/${id}`}>
+            <button className="ctrl-btn">
                     Rezerwuj <i className="fas fa-ticket-alt"></i>
                 </button>
+            </Link>
+                
             </>
         </div>
     )

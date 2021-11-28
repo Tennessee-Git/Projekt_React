@@ -124,3 +124,19 @@ export const getRoomById = (id) => {
             return error;
         });
 }
+
+//Związane z rezerwacjami
+export const addReservation = (new_reservation) => {
+    const request = {
+        ...new_reservation
+    }
+    return axios.post("/rezerwacje", request)
+       .then(response => {
+          console.log("Add reservation: ", response);
+          return response;
+       }).catch(err => {
+          if (err.response.status === 304) console.log("Duplicate data -", new_reservation);
+          else console.log(err);
+          return err.response;
+       });
+ }

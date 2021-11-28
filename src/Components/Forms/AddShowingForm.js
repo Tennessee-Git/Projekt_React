@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import DatePicker from "react-datepicker";
 import Select from 'react-select';
+import {addShowing, getMovies, getRooms} from '../../api/api';
+import moment from 'moment';
 import "react-datepicker/dist/react-datepicker.css";
 import './Form.css';
-import {addShowing, getMovies, getRooms} from '../../api/api';
 
 const customTheme = theme => ({
     ...theme,
@@ -27,7 +28,8 @@ export default class AddShowingForm extends Component {
             isDateSelected: false,
             selectedMovie: "",
             selectedMovieTitle:"",
-            selectedRoom: ""
+            selectedRoom: "",
+            errors: {}
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -67,18 +69,41 @@ export default class AddShowingForm extends Component {
         });
     }
 
-    handleSubmit = event =>{
-        let new_showing = {
-            date: this.state.selectedDate,
-            movieId: Number(this.state.selectedMovie),
-            roomId: Number(this.state.selectedRoom),
-            movieTitle: this.state.selectedMovieTitle
+    formValidation = () => {
+        const {selectedMovie, selectedRoom} = this.state;
+        let isValid = true;
+        const errors ={};
+        if(selectedMovie === "" )
+        {
+            errors.selectedMovie = "Musisz wybrać film z listy!";
+            isValid = false;
         }
-        console.log(new_showing);
-        addShowing(new_showing);
+        if(selectedRoom === "")
+        {
+            errors.selectedRoom = "Musisz wybrać salę z listy!";
+            isValid = false;
+        }
+        this.setState({errors});
+        return isValid;
+    }
+
+    handleSubmit = event =>{
+        const isValid = this.formValidation();
+        if(isValid)
+        {
+            let new_showing = {
+                date: moment(this.state.selectedDate).format('DD-MM-YYYY HH:mm'),
+                movieId: Number(this.state.selectedMovie),
+                roomId: Number(this.state.selectedRoom),
+                movieTitle: this.state.selectedMovieTitle
+            }
+            console.log(new_showing);
+            addShowing(new_showing);
+        }
     }
 
     render() {
+        const {errors} = this.state;
         return (
             <div className="form-wrapper">
                 <h2>Wpisz informacje o seansie</h2>
@@ -94,7 +119,8 @@ export default class AddShowingForm extends Component {
                             onChange={this.handleMovieChange}
                             placeholder="Wybierz film"
                         />
-                    </div >
+                        <div className="error-msg">{errors.selectedMovie}</div>
+                    </div>
                     <div className="form-inputs">
                         <label>Sala:</label>
                         <Select
@@ -105,6 +131,7 @@ export default class AddShowingForm extends Component {
                             onChange={this.handleRoomChange}
                             placeholder="Wybierz salę"
                         />
+                        <div className="error-msg">{errors.selectedRoom}</div>
                     </div>
                     <div className="form-inputs">
                         <label>Data seansu:</label>
@@ -114,7 +141,7 @@ export default class AddShowingForm extends Component {
                         onChange={this.handleDateChange}
                         showTimeSelect
                         timeFormat="HH:mm"
-                        dateFormat="dd.MM.yyyy HH:mm"
+                        dateFormat="dd-MM-yyyy HH:mm"
                         minDate={new Date()}
                         />
                     </div>
