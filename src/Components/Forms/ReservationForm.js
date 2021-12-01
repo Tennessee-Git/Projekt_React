@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {getShowingById, getRoomById, addReservation} from '../../api/api';
-import Room from '../Room/Room';
 import './Form.css';
+import Room from './Room';
 
 export default class ReservationForm extends Component {
     constructor(props) {
@@ -19,6 +19,7 @@ export default class ReservationForm extends Component {
             capacity: 0,
             errors:{}
         };
+        
     };
 
     async componentDidMount()
@@ -37,6 +38,10 @@ export default class ReservationForm extends Component {
             {
                 capacity: roomData.capacity
             });
+    }
+
+    setSelectedSeat = (seatCode) =>{
+        this.setState({selectedSeat: seatCode});
     }
 
     handleChange = event => {
@@ -79,7 +84,10 @@ export default class ReservationForm extends Component {
         if(isValid)
         {
             let new_reservation = {
-                seansId: this.state.seansId,
+                name: this.state.name,
+                lastName: this.state.lastName,
+                email: this.state.email,
+                seansId: Number(this.state.showingId),
                 seatCode: this.state.selectedSeat
             }
             console.log(new_reservation);
@@ -137,12 +145,13 @@ export default class ReservationForm extends Component {
                             <div className="error-msg">{errors.emailAt}</div>
                         </div>
                     </form>
+                    <Room setSelectedSeat={this.setSelectedSeat} capacity={capacity}/>
+                    <div className="error-msg">{errors.seat}</div>
+                    <br/>
+                <button className="AddBtn" onClick={this.handleSubmit}>Rezerwuj</button>
                 </div>
-                <div>
-                    <Room capacity={capacity}/>
-                </div>
+                
             </div>
-            
         )
     }
 }

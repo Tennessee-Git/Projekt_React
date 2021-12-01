@@ -181,9 +181,12 @@
   ],
   "rezerwacje": [
     {
-      "id": 1,
-      "seansId": 1,
-      "seatCode": "A-1"
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "test@gmail.com",
+      "seansId": 8,
+      "seatCode": "I-10",
+      "id": 3
     }
   ]
 }
