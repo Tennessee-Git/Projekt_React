@@ -17,6 +17,13 @@ export const getMovieCount = async () => { //działa
     return number;
 }
 
+export const updatePopularity = (id) => {
+    let movie = getMovieById(id);
+    let current= movie.popularity;
+    movie.popularity = current + 1;
+    editMovie(movie);
+}
+
 export const addMovie = (new_movie) => { //działa
     const request = {
         ...new_movie
@@ -98,7 +105,7 @@ export const editShowing = (showing) => { //chyba działa
         });
 }
 
-export const getShowingById = (id) => { //działa
+export const getShowingById = async (id) => { //działa
     return axios.get('seanse/' + id)
         .then((response) => {
             return response.data;})

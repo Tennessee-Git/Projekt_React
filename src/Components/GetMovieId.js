@@ -1,7 +1,6 @@
 import React from 'react';
 import {useParams}  from 'react-router-dom';
 import EditMovieForm from './Forms/EditMovieForm';
-import PropTypes from "prop-types";
 
 export default function GetMovieId() {
     const {id} = useParams();
@@ -12,8 +11,4 @@ export default function GetMovieId() {
             <EditMovieForm id={id} />
         </div>
     )
-}
-
-GetMovieId.propTypes = {
-    id: PropTypes.number
 }

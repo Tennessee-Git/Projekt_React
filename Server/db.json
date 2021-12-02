@@ -67,6 +67,7 @@
       "imageURL": "https://cdn11.bigcommerce.com/s-ydriczk/images/stencil/1280x1280/products/89058/93685/Joker-2019-Final-Style-steps-Poster-buy-original-movie-posters-at-starstills__62518.1572351179.jpg?c=2",
       "length": 104,
       "label": "Test1",
+      "popularity": 0,
       "value": 1,
       "id": 1
     },
@@ -76,6 +77,7 @@
       "length": 125,
       "label": "test2",
       "value": "2",
+      "popularity": 0,
       "id": 2
     },
     {
@@ -187,6 +189,38 @@
       "seansId": 8,
       "seatCode": "I-10",
       "id": 3
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "tesd@gmail.com",
+      "seansId": 8,
+      "seatCode": "E-2",
+      "id": 4
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "test@gmail.com",
+      "seansId": 8,
+      "seatCode": "D-6",
+      "id": 5
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "asdasd@gmail.com",
+      "seansId": 2,
+      "seatCode": "A-1",
+      "id": 6
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "ghhf@gmail.com",
+      "seansId": 2,
+      "seatCode": "J-1",
+      "id": 7
     }
   ]
 }

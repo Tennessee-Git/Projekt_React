@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './Seats.css'
+import PropTypes from "prop-types"
 
 export default class Room extends Component {
    
@@ -41,4 +42,9 @@ export default class Room extends Component {
             </div>
         )
     }
+}
+
+Room.propTypes = {
+    capacity: PropTypes.number,
+    setSelectedSeat: PropTypes.func
 }
