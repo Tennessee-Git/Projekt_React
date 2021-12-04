@@ -34,7 +34,7 @@ export default class ReservationForm extends Component {
             seatsTaken: showingData.seatsTaken
         }
             });
-
+            console.log(this.state.showing.seatsTaken);
         const roomData = await getRoomById(showingData.roomId);
         this.setState(
             {
@@ -94,6 +94,9 @@ export default class ReservationForm extends Component {
             }
             console.log(new_reservation);
             addReservation(new_reservation);
+            let newSeatsTaken = this.state.showing.seatsTaken;
+            newSeatsTaken.push(this.state.selectedSeat.toString())
+            console.log(newSeatsTaken);
             let showing2edit = {
                 date: this.state.showing.date,
                 movieTitle: this.state.showing.movieTitle,
@@ -101,7 +104,7 @@ export default class ReservationForm extends Component {
                 roomId: this.state.showing.roomId,
                 id: this.state.showingId,
                 availableSeats: this.state.capacity-1,
-                seatsTaken: this.state.showing.seatsTaken+` ${this.state.selectedSeat}`
+                seatsTaken: newSeatsTaken
             }
             editShowing(showing2edit);
         }
@@ -117,7 +120,6 @@ export default class ReservationForm extends Component {
                         <p>Film: {showing.movieTitle}</p>
                         <p>Sala: {showing.roomId}</p>
                         <p>Data: {showing.date}</p>
-                        <p>Zajęte miejsca: {showing.seatsTaken}</p>
                     </div>
                     <br/>
                     <form onSubmit={this.handleSubmit}>
@@ -158,7 +160,7 @@ export default class ReservationForm extends Component {
                             <div className="error-msg">{errors.emailAt}</div>
                         </div>
                     </form>
-                    <Room setSelectedSeat={this.setSelectedSeat} capacity={capacity}/>
+                    <Room setSelectedSeat={this.setSelectedSeat} capacity={capacity} seatsTaken={showing.seatsTaken}/>
                     <div className="error-msg">{errors.seat}</div>
                     <br/>
                 <button className="AddBtn" onClick={this.handleSubmit}>Rezerwuj</button>

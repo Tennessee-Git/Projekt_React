@@ -125,7 +125,7 @@
       "movieTitle": "Test2",
       "id": 2,
       "availableSeats": 100,
-      "seatsTaken": ""
+      "seatsTaken": []
     },
     {
       "date": "28-11-2021 14:00",
@@ -134,16 +134,16 @@
       "roomId": 2,
       "id": 8,
       "availableSeats": 99,
-      "seatsTaken": "A-1 D-3"
+      "seatsTaken": []
     },
     {
       "date": "28-11-2021 14:17",
+      "movieTitle": "Test1",
       "movieId": 1,
       "roomId": 2,
-      "movieTitle": "Test1",
-      "availableSeats": 100,
-      "seatsTaken": "",
-      "id": 9
+      "id": 9,
+      "availableSeats": 99,
+      "seatsTaken": []
     },
     {
       "date": "28-11-2021 14:17",
@@ -151,7 +151,7 @@
       "roomId": 2,
       "movieTitle": "test2",
       "availableSeats": 100,
-      "seatsTaken": "",
+      "seatsTaken": [],
       "id": 10
     },
     {
@@ -160,7 +160,7 @@
       "roomId": 5,
       "movieTitle": "Test1",
       "availableSeats": 110,
-      "seatsTaken": "",
+      "seatsTaken": [],
       "id": 15
     },
     {
@@ -169,7 +169,7 @@
       "roomId": 2,
       "movieTitle": "test2",
       "availableSeats": 100,
-      "seatsTaken": "",
+      "seatsTaken": [],
       "id": 16
     },
     {
@@ -178,7 +178,7 @@
       "roomId": 3,
       "movieTitle": "jjjj",
       "availableSeats": 80,
-      "seatsTaken": "",
+      "seatsTaken": [],
       "id": 18
     },
     {
@@ -187,7 +187,7 @@
       "roomId": 3,
       "movieTitle": "jjjj",
       "availableSeats": 80,
-      "seatsTaken": "",
+      "seatsTaken": [],
       "id": 19
     },
     {
@@ -196,7 +196,7 @@
       "roomId": 5,
       "movieTitle": "qweert",
       "availableSeats": 110,
-      "seatsTaken": "",
+      "seatsTaken": [],
       "id": 20
     },
     {
@@ -205,8 +205,21 @@
       "roomId": 5,
       "movieTitle": "qweert",
       "availableSeats": 110,
-      "seatsTaken": "",
+      "seatsTaken": [],
       "id": 21
+    },
+    {
+      "date": "04-12-2021 18:30",
+      "movieTitle": "teststst",
+      "movieId": 5,
+      "roomId": 6,
+      "id": 22,
+      "availableSeats": 79,
+      "seatsTaken": [
+        "A-5",
+        "A-3",
+        "C-8"
+      ]
     }
   ],
   "rezerwacje": [
@@ -273,6 +286,78 @@
       "seansId": 8,
       "seatCode": "D-3",
       "id": 10
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "awramiukofficial@gmail.com",
+      "seansId": 9,
+      "seatCode": "J-5",
+      "id": 11
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "awramiukofficial@gmail.com",
+      "seansId": 9,
+      "seatCode": "A-1",
+      "id": 12
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "awramiukofficial@gmail.com",
+      "seansId": 8,
+      "seatCode": "A-5",
+      "id": 13
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "awramiukofficial@gmail.com",
+      "seansId": 9,
+      "seatCode": "J-4",
+      "id": 14
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "awramiukofficial@gmail.com",
+      "seansId": 9,
+      "seatCode": "B-4",
+      "id": 15
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "awramiukofficial@gmail.com",
+      "seansId": 22,
+      "seatCode": "A-2",
+      "id": 16
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "awramiukofficial@gmail.com",
+      "seansId": 22,
+      "seatCode": "A-5",
+      "id": 17
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "awramiukofficial@gmail.com",
+      "seansId": 22,
+      "seatCode": "A-3",
+      "id": 18
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "awramiukofficial@gmail.com",
+      "seansId": 22,
+      "seatCode": "C-8",
+      "id": 19
     }
   ]
 }

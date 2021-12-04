@@ -97,7 +97,7 @@ export default class AddShowingForm extends Component {
                 roomId: Number(this.state.selectedRoom),
                 movieTitle: this.state.selectedMovieTitle,
                 availableSeats: this.state.rooms[Number(this.state.selectedRoom)-1].capacity,
-                seatsTaken: ""
+                seatsTaken: []
             }
             console.log(new_showing);
             addShowing(new_showing);
