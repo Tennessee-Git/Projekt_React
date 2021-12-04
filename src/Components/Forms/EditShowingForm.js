@@ -3,6 +3,7 @@ import DatePicker from "react-datepicker";
 import Select from 'react-select';
 import {editShowing, getMovies, getRooms, getShowingById} from '../../api/api';
 import moment from 'moment';
+import PropTypes from "prop-types";
 import "react-datepicker/dist/react-datepicker.css";
 import './Form.css';
 
@@ -30,9 +31,12 @@ export default class EditShowingForm extends Component {
             selectedMovie: "",
             selectedMovieTitle:"",
             selectedRoom: "",
+            oldMovieId:0,
             oldMovieTitle:"",
             oldRoom:"",
-            oldDate:""
+            oldDate:"",
+            availableSeats:null,
+            seatsTaken:""
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -45,12 +49,19 @@ export default class EditShowingForm extends Component {
         const data = await getMovies();
         const data2 = await getRooms();
         const showingData = await getShowingById(this.state.showingId);
-        console.log(showingData);
-        this.setState({movies: data, rooms: data2, 
-            selectedMovie: showingData.movieId, selectedRoom: showingData.roomId, selectedMovieTitle: showingData.movieTitle,
-            oldMovieTitle: showingData.movieTitle, oldRoom: showingData.roomId, oldDate: showingData.date
+        this.setState({
+            movies: data, 
+            rooms: data2, 
+            selectedMovie: showingData.movieId,
+            selectedRoom: showingData.roomId, 
+            selectedMovieTitle: showingData.movieTitle,
+            oldMovieId: showingData.movieId,
+            oldMovieTitle: showingData.movieTitle, 
+            oldRoom: showingData.roomId, 
+            oldDate: showingData.date,
+            availableSeats: showingData.availableSeats,
+            seatsTaken: showingData.seatsTaken
         });
-        console.log(this.state);
     }
 
     handleMovieChange= event =>{
@@ -78,15 +89,36 @@ export default class EditShowingForm extends Component {
     }
 
     handleSubmit = event =>{
-        let updated_showing = {
-            date: moment(this.state.selectedDate).format('DD-MM-YYYY HH:mm'),
-            movieId: Number(this.state.selectedMovie),
-            roomId: Number(this.state.selectedRoom),
-            movieTitle: this.state.selectedMovieTitle,
-            id:this.state.showingId
+        if(this.state.selectedMovieTitle === this.state.oldMovieTitle && this.state.selectedRoom === this.state.oldRoom && this.state.isDateSelected === false)
+        {
+            let updated_showing = {
+                date: this.state.oldDate,
+                movieId: this.state.oldMovieId,
+                roomId: this.state.oldRoom,
+                movieTitle: this.state.oldMovieTitle,
+                id: this.state.showingId,
+                availableSeats: this.state.availableSeats,
+                seatsTaken: this.state.seatsTaken
+            }
+            console.log(updated_showing);
+            editShowing(updated_showing);
         }
-        console.log(updated_showing);
-        editShowing(updated_showing);
+        else {
+            if(this.state.selectedDate!== "Invalid date" && this.state.selectedMovie !=="" && this.state.selectedRoom !=="")
+            {
+                    let updated_showing = {
+                        date: moment(this.state.selectedDate).format('DD-MM-YYYY HH:mm'),
+                        movieId: Number(this.state.selectedMovie),
+                        roomId: Number(this.state.selectedRoom),
+                        movieTitle: this.state.selectedMovieTitle,
+                        id:this.state.showingId,
+                        availableSeats: this.state.availableSeats,
+                        seatsTaken: this.state.seatsTaken
+                    }
+                    console.log(updated_showing);
+                    editShowing(updated_showing);
+            }
+        }
     }
 
     render() {
@@ -136,4 +168,8 @@ export default class EditShowingForm extends Component {
             </div>
         )
     }
+}
+
+EditShowingForm.propTypes = {
+    id: PropTypes.number
 }

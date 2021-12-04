@@ -1,4 +1,5 @@
 import axios from 'axios';
+import moment from 'moment';
 axios.defaults.baseURL = 'http://localhost:3006';
 
 //Związane z filmami
@@ -115,14 +116,26 @@ export const getShowingById = async (id) => { //działa
         });
 }
 
+export const getShowingsNow = async () => {
+    const response = await axios.get("/seanse");
+    let showingsNow = response.data;
+    const now = moment().format('DD-MM-YYYY HH:mm');
+    const output =[];
+    showingsNow.forEach(showing => {
+        if(moment(showing.date).isSameOrAfter(now))
+            output.push(showing);
+    });
+    return output;
+}
+
 //Związane z salami
 
-export const getRooms = async () => {
+export const getRooms = async () => { //działa
     const response = await axios.get("/sale");
     return response.data;
 }
 
-export const getRoomById = (id) => {
+export const getRoomById = (id) => { //działa
     return axios.get('sale/' + id)
         .then((response) => {
             return response.data;})
@@ -133,7 +146,7 @@ export const getRoomById = (id) => {
 }
 
 //Związane z rezerwacjami
-export const addReservation = (new_reservation) => {
+export const addReservation = (new_reservation) => { //działa
     const request = {
         ...new_reservation
     }

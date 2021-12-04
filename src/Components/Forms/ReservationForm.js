@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import {getShowingById, getRoomById, addReservation} from '../../api/api';
+import {getShowingById, getRoomById, addReservation, editShowing} from '../../api/api';
 import './Form.css';
 import Room from './Room';
+import PropTypes from "prop-types";
 
 export default class ReservationForm extends Component {
     constructor(props) {
@@ -9,10 +10,7 @@ export default class ReservationForm extends Component {
         this.state = {
             selectedSeat:"",
             showingId: this.props.id,
-            movieId: null,
-            movieTitle:"",
-            roomId:null,
-            date:"",
+            showing:{},
             name:"",
             lastName:"",
             email:"",
@@ -27,10 +25,14 @@ export default class ReservationForm extends Component {
         const showingData = await getShowingById(this.state.showingId);
         this.setState(
             {
+            showing: {
             movieId: showingData.movieId,
             movieTitle: showingData.movieTitle,
             roomId: showingData.roomId,
-            date: showingData.date
+            date: showingData.date,
+            availableSeats: showingData.availableSeats,
+            seatsTaken: showingData.seatsTaken
+        }
             });
 
         const roomData = await getRoomById(showingData.roomId);
@@ -92,19 +94,30 @@ export default class ReservationForm extends Component {
             }
             console.log(new_reservation);
             addReservation(new_reservation);
+            let showing2edit = {
+                date: this.state.showing.date,
+                movieTitle: this.state.showing.movieTitle,
+                movieId: this.state.showing.movieId,
+                roomId: this.state.showing.roomId,
+                id: this.state.showingId,
+                availableSeats: this.state.capacity-1,
+                seatsTaken: this.state.showing.seatsTaken+` ${this.state.selectedSeat}`
+            }
+            editShowing(showing2edit);
         }
     }
 
     render() {
-        const {movieTitle, roomId, date, name, lastName, email, errors, capacity} = this.state;
+        const {showing, name, lastName, email, errors, capacity} = this.state;
         return (
             <div>
                 <div className="form-wrapper">
                     <div>
-                        <h5>Informacje o seansie:</h5>
-                        <p>Film: {movieTitle}</p>
-                        <p>Sala: {roomId}</p>
-                        <p>Data: {date}</p>
+                        <h4>Informacje o seansie:</h4>
+                        <p>Film: {showing.movieTitle}</p>
+                        <p>Sala: {showing.roomId}</p>
+                        <p>Data: {showing.date}</p>
+                        <p>Zajęte miejsca: {showing.seatsTaken}</p>
                     </div>
                     <br/>
                     <form onSubmit={this.handleSubmit}>
@@ -154,4 +167,8 @@ export default class ReservationForm extends Component {
             </div>
         )
     }
+}
+
+ReservationForm.propTypes = {
+    id: PropTypes.number
 }

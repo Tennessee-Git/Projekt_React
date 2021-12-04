@@ -11,7 +11,7 @@ export default function GetShowingId({type}) {
     {
         return (
             <div>
-                <EditShowingForm id={id} />
+                <EditShowingForm id={Number(id)} />
             </div>
         )
     }
@@ -19,7 +19,7 @@ export default function GetShowingId({type}) {
     {
         return (
             <div>
-                <ReservationForm id={id} />
+                <ReservationForm id={Number(id)} />
             </div>
         )
     }

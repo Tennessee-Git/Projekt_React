@@ -147,23 +147,29 @@
   "seanse": [
     {
       "date": "28.11.2021 19:00",
-      "movieTitle": "Test2",
       "movieId": 2,
       "roomId": 2,
-      "id": 2
+      "movieTitle": "Test2",
+      "id": 2,
+      "availableSeats": 100,
+      "seatsTaken": ""
     },
     {
-      "date": "28-11-2021 14:00",
+      "date": "28.11.2021 19:00",
       "movieId": 3,
       "roomId": 2,
       "movieTitle": "aasd",
-      "id": 7
+      "id": 7,
+      "availableSeats": 99,
+      "seatsTaken": "A-1"
     },
     {
-      "date": "28-11-2021 14:16",
+      "date": "28-11-2021 14:00",
       "movieId": 1,
-      "roomId": 1,
+      "roomId": 2,
       "movieTitle": "Test1",
+      "availableSeats": 99,
+      "seatsTaken": "A-1",
       "id": 8
     },
     {
@@ -171,6 +177,8 @@
       "movieId": 1,
       "roomId": 2,
       "movieTitle": "Test1",
+      "availableSeats": 100,
+      "seatsTaken": "",
       "id": 9
     },
     {
@@ -178,7 +186,18 @@
       "movieId": 2,
       "roomId": 2,
       "movieTitle": "test2",
+      "availableSeats": 100,
+      "seatsTaken": "",
       "id": 10
+    },
+    {
+      "date": "04-12-2021 13:00",
+      "movieId": 7,
+      "roomId": 9,
+      "movieTitle": "bruh",
+      "availableSeats": 90,
+      "seatsTaken": "",
+      "id": 11
     }
   ],
   "rezerwacje": [
@@ -221,6 +240,22 @@
       "seansId": 2,
       "seatCode": "J-1",
       "id": 7
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "awramiukofficial@gmail.com",
+      "seansId": 7,
+      "seatCode": "A-1",
+      "id": 8
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "awramiukofficial@gmail.com",
+      "seansId": 7,
+      "seatCode": "A-1",
+      "id": 9
     }
   ]
 }

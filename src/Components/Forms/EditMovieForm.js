@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { editMovie, getMovieById } from '../../api/api';
+import PropTypes from "prop-types";
 
 export default class EditMovieForm extends Component {
     constructor(props) {
@@ -67,7 +68,8 @@ export default class EditMovieForm extends Component {
                 editMovie(updated_movie);
             }
         }
-        else {if(this.state.title ==="" && this.state.imageURL === "" && this.state.length ===null)
+        else {
+            if(this.state.title ==="" && this.state.imageURL === "" && this.state.length ===null)
         {
             let updated_movie = {
                 title: this.state.oldTitle,
@@ -126,4 +128,8 @@ export default class EditMovieForm extends Component {
             </div>
         )
     }
+}
+
+EditMovieForm.propTypes = {
+    id: PropTypes.number
 }
