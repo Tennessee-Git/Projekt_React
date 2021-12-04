@@ -95,6 +95,15 @@ export const addShowing = (new_showing) => { //działa
        });
  }
 
+ export const deleteShowings =  (MovieId) => { // nie działa
+    const response = axios.get("/seanse");
+    let showings = response.data;
+      showings.forEach(showing => {
+          if(showing.movieId === MovieId)
+          axios.delete("/seanse/" + showing.id);
+      });
+ }
+
 export const editShowing = (showing) => { //działa
     return axios.put(`/seanse/${showing.id}`, showing)
         .then((response) => {
@@ -116,7 +125,7 @@ export const getShowingById = async (id) => { //działa
         });
 }
 
-export const getShowingsNow = async () => { // chyba działa
+export const getShowingsNow = async () => { // działa
     const response = await axios.get("/seanse");
     let showingsNow = response.data;
     const now = moment().format('DD-MM-YYYY HH:mm');

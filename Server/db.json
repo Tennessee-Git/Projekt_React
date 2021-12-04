@@ -81,15 +81,6 @@
       "id": 2
     },
     {
-      "title": "aasd",
-      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Test-Logo.svg/783px-Test-Logo.svg.png",
-      "length": 445,
-      "label": "aasd",
-      "value": 3,
-      "popularity": 0,
-      "id": 3
-    },
-    {
       "title": "test3",
       "imageURL": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Test.svg",
       "length": 12312,
@@ -117,15 +108,6 @@
       "id": 6
     },
     {
-      "title": "bruh",
-      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Test.svg",
-      "length": 69,
-      "label": "bruh",
-      "value": 7,
-      "popularity": 0,
-      "id": 7
-    },
-    {
       "title": "asdasd",
       "imageURL": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Test.svg",
       "length": 6969,
@@ -133,15 +115,6 @@
       "value": 8,
       "popularity": 0,
       "id": 8
-    },
-    {
-      "title": "jjjj",
-      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Test.svg",
-      "length": 157,
-      "label": "jjjj",
-      "value": 9,
-      "popularity": 0,
-      "id": 9
     }
   ],
   "seanse": [
@@ -153,15 +126,6 @@
       "id": 2,
       "availableSeats": 100,
       "seatsTaken": ""
-    },
-    {
-      "date": "28.11.2021 19:00",
-      "movieId": 3,
-      "roomId": 2,
-      "movieTitle": "aasd",
-      "id": 7,
-      "availableSeats": 99,
-      "seatsTaken": "A-1"
     },
     {
       "date": "28-11-2021 14:00",
@@ -191,15 +155,6 @@
       "id": 10
     },
     {
-      "date": "04-12-2021 13:00",
-      "movieId": 7,
-      "roomId": 9,
-      "movieTitle": "bruh",
-      "availableSeats": 90,
-      "seatsTaken": "",
-      "id": 11
-    },
-    {
       "date": "04-12-2021 17:00",
       "movieId": 1,
       "roomId": 5,
@@ -218,22 +173,40 @@
       "id": 16
     },
     {
-      "date": "04-12-2021 17:30",
-      "movieId": 3,
-      "roomId": 2,
-      "movieTitle": "aasd",
-      "availableSeats": 100,
-      "seatsTaken": "",
-      "id": 17
-    },
-    {
-      "date": "04-12-2021 20:00",
-      "movieId": 7,
-      "roomId": 6,
-      "movieTitle": "bruh",
+      "date": "04-12-2021 16:30",
+      "movieId": 9,
+      "roomId": 3,
+      "movieTitle": "jjjj",
       "availableSeats": 80,
       "seatsTaken": "",
       "id": 18
+    },
+    {
+      "date": "04-12-2021 17:00",
+      "movieId": 9,
+      "roomId": 3,
+      "movieTitle": "jjjj",
+      "availableSeats": 80,
+      "seatsTaken": "",
+      "id": 19
+    },
+    {
+      "date": "04-12-2021 17:00",
+      "movieId": 7,
+      "roomId": 5,
+      "movieTitle": "qweert",
+      "availableSeats": 110,
+      "seatsTaken": "",
+      "id": 20
+    },
+    {
+      "date": "04-12-2021 17:30",
+      "movieId": 7,
+      "roomId": 5,
+      "movieTitle": "qweert",
+      "availableSeats": 110,
+      "seatsTaken": "",
+      "id": 21
     }
   ],
   "rezerwacje": [
