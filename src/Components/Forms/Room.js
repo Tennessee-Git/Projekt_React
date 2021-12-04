@@ -10,6 +10,7 @@ export default class Room extends Component {
 
     createSeatArray = () =>{
         let SeatArray = [];
+        let TakenSeats = this.props.seatsTaken;
         for(let i = 0; i<this.props.capacity/10;i++)
         {
             let children = [];
@@ -23,6 +24,7 @@ export default class Room extends Component {
                     type="checkbox" 
                     className="seat" 
                     value={letter+"-"+j} 
+                    disabled={TakenSeats && TakenSeats.includes(_key)? true : false}
                     onClick={this.handleClick}/>
                 );
             }
