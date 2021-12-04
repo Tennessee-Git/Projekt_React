@@ -102,3 +102,15 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.showing-seats {
+    text-shadow:rgb(0, 0, 0) 1px 1px 5px;
+    color:white;
+    text-align: center;
+    position: absolute;
+    bottom: 50px;
+    left: 5px;
+    width: 190px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

@@ -95,7 +95,9 @@ export default class AddShowingForm extends Component {
                 date: moment(this.state.selectedDate).format('DD-MM-YYYY HH:mm'),
                 movieId: Number(this.state.selectedMovie),
                 roomId: Number(this.state.selectedRoom),
-                movieTitle: this.state.selectedMovieTitle
+                movieTitle: this.state.selectedMovieTitle,
+                availableSeats: this.state.rooms[Number(this.state.selectedRoom)-1].capacity,
+                seatsTaken: ""
             }
             console.log(new_showing);
             addShowing(new_showing);

@@ -7,7 +7,13 @@ const ShowingsList = ({showings}) => {
         <div className="card-container"> 
                     <div className="movie-grid">
                     {showings.map((showing,key) =>
-                        <ShowingDetails key={showing.id} id={showing.id} movieTitle={showing.movieTitle} date={showing.date} roomId={showing.roomId}/>)}
+                        <ShowingDetails 
+                        key={showing.id} 
+                        id={showing.id} 
+                        movieTitle={showing.movieTitle} 
+                        date={showing.date} 
+                        roomId={showing.roomId} 
+                        availableSeats={showing.availableSeats}/>)}
                     </div>
                 </div>
     )

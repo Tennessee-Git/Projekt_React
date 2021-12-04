@@ -46,6 +46,11 @@ export default class AddMovieForm extends Component {
             errors.imageURLlength = "Link do plakatu musi mieć co najmniej 10 liter!";
             isValid = false;
         }
+        if( !imageURL.startsWith("https://"))
+        {
+            errors.imageURLnot = "Link musi zaczynać się https://";
+            isValid = false;
+        }
         this.setState({errors});
         return isValid;
     }
@@ -95,6 +100,7 @@ export default class AddMovieForm extends Component {
                             value = {imageURL}
                             onChange={(event) => this.handleChange(event)}/>
                             <div className="error-msg">{errors.imageURLlength}</div>
+                            <div className="error-msg">{errors.imageURLnot}</div>
                     </div>
                     <div className="form-inputs">
                         <label>Długość(min):</label>

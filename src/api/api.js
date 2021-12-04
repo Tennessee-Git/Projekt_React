@@ -18,7 +18,7 @@ export const getMovieCount = async () => { //działa
     return number;
 }
 
-export const updatePopularity = (id) => {
+export const updatePopularity = (id) => { // Nie będzie potrzebne
     let movie = getMovieById(id);
     let current= movie.popularity;
     movie.popularity = current + 1;
@@ -75,7 +75,7 @@ export const getMovieById = (id) => { //działa
 
 //Związane z seansami
 
-export const getShowings = async () => {
+export const getShowings = async () => { //działa
     const response = await axios.get("/seanse");
     return response.data;
 }
@@ -95,7 +95,7 @@ export const addShowing = (new_showing) => { //działa
        });
  }
 
-export const editShowing = (showing) => { //chyba działa
+export const editShowing = (showing) => { //działa
     return axios.put(`/seanse/${showing.id}`, showing)
         .then((response) => {
             console.log("Edit: ", response);
@@ -116,7 +116,7 @@ export const getShowingById = async (id) => { //działa
         });
 }
 
-export const getShowingsNow = async () => {
+export const getShowingsNow = async () => { // chyba działa
     const response = await axios.get("/seanse");
     let showingsNow = response.data;
     const now = moment().format('DD-MM-YYYY HH:mm');
@@ -125,6 +125,7 @@ export const getShowingsNow = async () => {
         if(moment(showing.date).isSameOrAfter(now))
             output.push(showing);
     });
+    output.sort((a,b) => ((moment(a.date)).isSameOrAfter(moment(b.date))) ? 1 : -1);
     return output;
 }
 

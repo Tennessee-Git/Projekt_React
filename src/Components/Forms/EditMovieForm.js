@@ -48,6 +48,11 @@ export default class EditMovieForm extends Component {
             errors.imageURLlength = "Link do plakatu musi mieć co najmniej 10 liter!";
             isValid = false;
         }
+        if( !imageURL.startsWith("https://"))
+        {
+            errors.imageURLnot = "Link musi zaczynać się https://";
+            isValid = false;
+        }
         this.setState({errors});
         return isValid;
     }

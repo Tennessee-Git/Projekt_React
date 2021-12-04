@@ -198,6 +198,42 @@
       "availableSeats": 90,
       "seatsTaken": "",
       "id": 11
+    },
+    {
+      "date": "04-12-2021 17:00",
+      "movieId": 1,
+      "roomId": 5,
+      "movieTitle": "Test1",
+      "availableSeats": 110,
+      "seatsTaken": "",
+      "id": 15
+    },
+    {
+      "date": "04-12-2021 17:00",
+      "movieId": 2,
+      "roomId": 2,
+      "movieTitle": "test2",
+      "availableSeats": 100,
+      "seatsTaken": "",
+      "id": 16
+    },
+    {
+      "date": "04-12-2021 17:30",
+      "movieId": 3,
+      "roomId": 2,
+      "movieTitle": "aasd",
+      "availableSeats": 100,
+      "seatsTaken": "",
+      "id": 17
+    },
+    {
+      "date": "04-12-2021 20:00",
+      "movieId": 7,
+      "roomId": 6,
+      "movieTitle": "bruh",
+      "availableSeats": 80,
+      "seatsTaken": "",
+      "id": 18
     }
   ],
   "rezerwacje": [
