@@ -129,7 +129,7 @@ export const getShowingsNow = async () => { // działa
     const response = await axios.get("/seanse");
     let showingsNow = response.data;
     const now = moment().format('DD-MM-YYYY HH:mm');
-    const output =[];
+    let output =[];
     showingsNow.forEach(showing => {
         if(moment(showing.date).isSameOrAfter(now))
             output.push(showing);

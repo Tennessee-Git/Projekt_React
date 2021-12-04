@@ -129,12 +129,12 @@
     },
     {
       "date": "28-11-2021 14:00",
+      "movieTitle": "Test1",
       "movieId": 1,
       "roomId": 2,
-      "movieTitle": "Test1",
+      "id": 8,
       "availableSeats": 99,
-      "seatsTaken": "A-1",
-      "id": 8
+      "seatsTaken": "A-1 D-3"
     },
     {
       "date": "28-11-2021 14:17",
@@ -265,6 +265,14 @@
       "seansId": 7,
       "seatCode": "A-1",
       "id": 9
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "hghgh@gmail.com",
+      "seansId": 8,
+      "seatCode": "D-3",
+      "id": 10
     }
   ]
 }
