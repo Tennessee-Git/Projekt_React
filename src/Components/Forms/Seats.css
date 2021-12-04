@@ -35,6 +35,10 @@
   margin-right: 10px;
 }
 
+input[type="checkbox"]:disabled {
+  cursor:default;
+}
+
 .seat:hover {
   background: #323a69;
   color: #f0fff0;
