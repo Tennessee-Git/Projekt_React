@@ -76,7 +76,7 @@
       "imageURL": "https://m.media-amazon.com/images/I/91jatiUZjtL._AC_SY741_.jpg",
       "length": 125,
       "label": "test2",
-      "value": "2",
+      "value": 2,
       "popularity": 0,
       "id": 2
     },
@@ -220,6 +220,33 @@
         "A-3",
         "C-8"
       ]
+    },
+    {
+      "date": "05-12-2021 16:30",
+      "movieId": 1,
+      "roomId": 1,
+      "movieTitle": "Test1",
+      "availableSeats": 90,
+      "seatsTaken": [],
+      "id": 23
+    },
+    {
+      "date": "05-12-2021 17:00",
+      "movieId": 2,
+      "roomId": 1,
+      "movieTitle": "test2",
+      "availableSeats": 90,
+      "seatsTaken": [],
+      "id": 24
+    },
+    {
+      "date": "05-12-2021 17:00",
+      "movieId": 2,
+      "roomId": 7,
+      "movieTitle": "test2",
+      "availableSeats": 90,
+      "seatsTaken": [],
+      "id": 25
     }
   ],
   "rezerwacje": [
