@@ -7,6 +7,6 @@ W terminalu nr 1 wywołujemy najpierw polecenie:
 Następnie najpierw w terminalu nr 2 (najpierw włączamy serwer JSON), a potem w terminalu nr 1 wywołujemy polecenie:
 ### `npm start`
 
-Po włączeniu
-[http://localhost:3000](http://localhost:3000) <- aplikacja włączy się na tym porcie
-[http://localhost:3006](http://localhost:3006) <- serwer włączy się na tym porcie
+Po włączeniu:
+- [http://localhost:3000](http://localhost:3000) <- aplikacja włączy się na tym porcie
+- [http://localhost:3006](http://localhost:3006) <- serwer włączy się na tym porcie
