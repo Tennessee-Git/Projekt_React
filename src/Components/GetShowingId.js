@@ -26,5 +26,6 @@ export default function GetShowingId({type}) {
 }
 
 GetShowingId.propTypes = {
-    id: PropTypes.number
+    id: PropTypes.number,
+    type: PropTypes.string
 }

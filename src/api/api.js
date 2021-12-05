@@ -4,12 +4,12 @@ axios.defaults.baseURL = 'http://localhost:3006';
 
 //Związane z filmami
 
-export const getMovies = async () => { //działa
+export const getMovies = async () => {
     const response = await axios.get("/filmy");
     return response.data;
   }
 
-export const getMovieCount = async () => { //działa
+export const getMovieCount = async () => {
     const response = await axios.get("/filmy");
     let data = response.data;
     console.log(data);
@@ -18,14 +18,7 @@ export const getMovieCount = async () => { //działa
     return number;
 }
 
-export const updatePopularity = (id) => { // Nie będzie potrzebne
-    let movie = getMovieById(id);
-    let current= movie.popularity;
-    movie.popularity = current + 1;
-    editMovie(movie);
-}
-
-export const addMovie = (new_movie) => { //działa
+export const addMovie = (new_movie) => {
     const request = {
         ...new_movie
     }
@@ -40,7 +33,7 @@ export const addMovie = (new_movie) => { //działa
        });
  }
 
- export const deleteMovie = (id) => { //działa
+ export const deleteMovie = (id) => {
     return axios.delete("/filmy/" + id)
         .then((response) => {
             console.log("Delete: ", response);
@@ -51,7 +44,7 @@ export const addMovie = (new_movie) => { //działa
         });
 }
 
-export const editMovie = (movie) => { //działa
+export const editMovie = (movie) => {
     movie.value = movie.id;
     return axios.put(`/filmy/${movie.id}`, movie)
         .then((response) => {
@@ -63,7 +56,7 @@ export const editMovie = (movie) => { //działa
         });
 }
 
-export const getMovieById = (id) => { //działa
+export const getMovieById = (id) => {
     return axios.get('filmy/' + id)
         .then((response) => {
             return response.data;})
@@ -75,12 +68,12 @@ export const getMovieById = (id) => { //działa
 
 //Związane z seansami
 
-export const getShowings = async () => { //działa
+export const getShowings = async () => {
     const response = await axios.get("/seanse");
     return response.data;
 }
 
-export const addShowing = (new_showing) => { //działa
+export const addShowing = (new_showing) => {
     const request = {
         ...new_showing
     }
@@ -95,16 +88,7 @@ export const addShowing = (new_showing) => { //działa
        });
  }
 
- export const deleteShowings =  (MovieId) => { // nie działa
-    const response = axios.get("/seanse");
-    let showings = response.data;
-      showings.forEach(showing => {
-          if(showing.movieId === MovieId)
-          axios.delete("/seanse/" + showing.id);
-      });
- }
-
-export const editShowing = (showing) => { //działa
+export const editShowing = (showing) => {
     return axios.put(`/seanse/${showing.id}`, showing)
         .then((response) => {
             console.log("Edit: ", response);
@@ -115,7 +99,7 @@ export const editShowing = (showing) => { //działa
         });
 }
 
-export const getShowingById = async (id) => { //działa
+export const getShowingById = async (id) => {
     return axios.get('seanse/' + id)
         .then((response) => {
             return response.data;})
@@ -125,7 +109,7 @@ export const getShowingById = async (id) => { //działa
         });
 }
 
-export const getShowingsNow = async () => { // działa
+export const getShowingsNow = async () => {
     const response = await axios.get("/seanse");
     let showingsNow = response.data;
     const now = moment().format('DD-MM-YYYY HH:mm');
@@ -140,12 +124,12 @@ export const getShowingsNow = async () => { // działa
 
 //Związane z salami
 
-export const getRooms = async () => { //działa
+export const getRooms = async () => {
     const response = await axios.get("/sale");
     return response.data;
 }
 
-export const getRoomById = (id) => { //działa
+export const getRoomById = (id) => {
     return axios.get('sale/' + id)
         .then((response) => {
             return response.data;})
@@ -156,7 +140,7 @@ export const getRoomById = (id) => { //działa
 }
 
 //Związane z rezerwacjami
-export const addReservation = (new_reservation) => { //działa
+export const addReservation = (new_reservation) => {
     const request = {
         ...new_reservation
     }
