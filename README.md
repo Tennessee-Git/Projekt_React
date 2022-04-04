@@ -2,6 +2,8 @@
 - Redirect z zamawiania biletu
 - Poprawa popupów do dodawania seansów i filmów
 
+# PREZENTACJA PROJEKTU W PLIKU PrezentacjaREACT.pdf
+
 ### `TEMAT APLIKACJI:`
 Aplikacja do zarządzania seansami w kinie
 
