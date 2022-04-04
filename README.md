@@ -1,3 +1,7 @@
+# DO POPRAWIENIA:
+- Redirect z zamawiania biletu
+- Poprawa popupów do dodawania seansów i filmów
+
 ### `TEMAT APLIKACJI:`
 Aplikacja do zarządzania seansami w kinie
 
