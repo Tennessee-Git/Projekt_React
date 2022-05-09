@@ -101,6 +101,7 @@ export default class AddShowingForm extends Component {
             }
             console.log(new_showing);
             addShowing(new_showing);
+            this.props.closeDialog();
         }
     }
 
