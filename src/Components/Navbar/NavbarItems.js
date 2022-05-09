@@ -13,5 +13,10 @@ export const NavbarItems = [
         title: 'Filmy',
         url: 'filmy',
         cName: 'nav-links'
+    },
+    {
+        title: 'Sale',
+        url: 'sale',
+        cName: 'nav-links'
     }
 ]
