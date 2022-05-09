@@ -34,7 +34,6 @@ export default class ReservationForm extends Component {
             seatsTaken: showingData.seatsTaken
         }
             });
-            console.log(this.state.showing.seatsTaken);
         const roomData = await getRoomById(showingData.roomId);
         this.setState(
             {
@@ -96,14 +95,14 @@ export default class ReservationForm extends Component {
             addReservation(new_reservation);
             let newSeatsTaken = this.state.showing.seatsTaken;
             newSeatsTaken.push(this.state.selectedSeat.toString())
-            console.log(newSeatsTaken);
+            let newCapacity = this.state.capacity - (newSeatsTaken.length + 1)
             let showing2edit = {
                 date: this.state.showing.date,
                 movieTitle: this.state.showing.movieTitle,
                 movieId: this.state.showing.movieId,
                 roomId: this.state.showing.roomId,
                 id: this.state.showingId,
-                availableSeats: this.state.capacity-1,
+                availableSeats: newCapacity,
                 seatsTaken: newSeatsTaken
             }
             editShowing(showing2edit);
