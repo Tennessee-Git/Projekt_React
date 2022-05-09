@@ -9,11 +9,13 @@
 }
 
 .movie-card img {
-    width: auto;
+    /* width: auto;
     max-width: 200px;
     height: auto;
     max-height: 250px;
-    display: block;
+    display: block; */
+    width: 200px;
+    height: 250px;
 }
 
 .movie-card .overlay {
