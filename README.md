@@ -1,5 +1,25 @@
+# DO POPRAWIENIA:
+- Redirect z zamawiania biletu
+- Poprawa popupów do dodawania seansów i filmów
+
+# PREZENTACJA PROJEKTU W PLIKU PrezentacjaREACT.pdf
+
+### `TEMAT APLIKACJI:`
+Aplikacja do zarządzania seansami w kinie
+
+### `WYMAGANIA:`
+- dodawanie/usuwanie/edycja seansów
+- dodawanie/usuwanie/edycja filmów
+- rezerwacja biletów na seanse
+- wyświetlanie aktualnie trwających seansów
+- wyświetlanie tabeli/wykresu popularności filmów na podstawie liczby sprzedanych biletów
+
+### `NIEZREALIZOWANE FUNKCJONALNOŚCI:`
+- wyświetlanie tabeli/wykresu popularności filmów na podstawie liczby sprzedanych biletów
+
+### `Uruchamianie aplikacji:`
 Po pobraniu repozytorium i otwarciu w VS Code, otwieramy dodatkowy terminal.
-W jednym (nr 1) przechodzimu do folderu projekt_react_komponenty, natomiast w drugim (nr 2) do projekt_react_komponenty\Server.
+W jednym (nr 1) przechodzimy do folderu projekt_react_komponenty, natomiast w drugim (nr 2) do projekt_react_komponenty\Server.
 
 W terminalu nr 1 wywołujemy najpierw polecenie:
 ### `npm install` w celu utworzenia folderu node_modules potrzebnego do uruchomienia aplikacji.
