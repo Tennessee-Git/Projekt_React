@@ -1,5 +1,5 @@
 {
-  "sale": [
+  "rooms": [
     {
       "id": 1,
       "label": "Sala 1",
@@ -61,7 +61,7 @@
       "capacity": 90
     }
   ],
-  "filmy": [
+  "movies": [
     {
       "title": "Test1",
       "imageURL": "https://cdn11.bigcommerce.com/s-ydriczk/images/stencil/1280x1280/products/89058/93685/Joker-2019-Final-Style-steps-Poster-buy-original-movie-posters-at-starstills__62518.1572351179.jpg?c=2",
@@ -135,7 +135,7 @@
       "id": 10
     }
   ],
-  "seanse": [
+  "showings": [
     {
       "date": "28.11.2021 19:00",
       "movieId": 2,
@@ -267,7 +267,7 @@
       "id": 25
     }
   ],
-  "rezerwacje": [
+  "reservations": [
     {
       "name": "Paweł",
       "lastName": "Awramiuk",

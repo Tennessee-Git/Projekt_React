@@ -5,12 +5,12 @@ axios.defaults.baseURL = 'http://localhost:3006';
 //Związane z filmami
 
 export const getMovies = async () => {
-    const response = await axios.get("/filmy");
+    const response = await axios.get("/movies");
     return response.data;
   }
 
 export const getMovieCount = async () => {
-    const response = await axios.get("/filmy");
+    const response = await axios.get("/movies");
     let data = response.data;
     console.log(data);
     let number = data.length;
@@ -22,7 +22,7 @@ export const addMovie = (new_movie) => {
     const request = {
         ...new_movie
     }
-    return axios.post("/filmy", request)
+    return axios.post("/movies", request)
        .then(response => {
           console.log("Add film: ", response);
           return response;
@@ -34,7 +34,7 @@ export const addMovie = (new_movie) => {
  }
 
  export const deleteMovie = (id) => {
-    return axios.delete("/filmy/" + id)
+    return axios.delete("/movies/" + id)
         .then((response) => {
             console.log("Delete: ", response);
             return response;
@@ -46,7 +46,7 @@ export const addMovie = (new_movie) => {
 
 export const editMovie = (movie) => {
     movie.value = movie.id;
-    return axios.put(`/filmy/${movie.id}`, movie)
+    return axios.put(`/movies/${movie.id}`, movie)
         .then((response) => {
             console.log("Edit: ", response);
             return response;
@@ -57,7 +57,7 @@ export const editMovie = (movie) => {
 }
 
 export const getMovieById = (id) => {
-    return axios.get('filmy/' + id)
+    return axios.get('movies/' + id)
         .then((response) => {
             return response.data;})
         .catch((error) => {
@@ -69,7 +69,7 @@ export const getMovieById = (id) => {
 //Związane z seansami
 
 export const getShowings = async () => {
-    const response = await axios.get("/seanse");
+    const response = await axios.get("/showings");
     return response.data;
 }
 
@@ -77,9 +77,9 @@ export const addShowing = (new_showing) => {
     const request = {
         ...new_showing
     }
-    return axios.post("/seanse", request)
+    return axios.post("/showings", request)
        .then(response => {
-          console.log("Add seans: ", response);
+          console.log("Add showing: ", response);
           return response;
        }).catch(err => {
           if (err.response.status === 304) console.log("Duplicate data -", new_showing);
@@ -89,7 +89,7 @@ export const addShowing = (new_showing) => {
  }
 
 export const editShowing = (showing) => {
-    return axios.put(`/seanse/${showing.id}`, showing)
+    return axios.put(`/showings/${showing.id}`, showing)
         .then((response) => {
             console.log("Edit: ", response);
             return response;
@@ -100,7 +100,7 @@ export const editShowing = (showing) => {
 }
 
 export const getShowingById = async (id) => {
-    return axios.get('seanse/' + id)
+    return axios.get('showings/' + id)
         .then((response) => {
             return response.data;})
         .catch((error) => {
@@ -110,7 +110,7 @@ export const getShowingById = async (id) => {
 }
 
 export const getShowingsNow = async () => {
-    const response = await axios.get("/seanse");
+    const response = await axios.get("/showings");
     let showingsNow = response.data;
     const now = moment().format('DD-MM-YYYY HH:mm');
     let output =[];
@@ -125,12 +125,12 @@ export const getShowingsNow = async () => {
 //Związane z salami
 
 export const getRooms = async () => {
-    const response = await axios.get("/sale");
+    const response = await axios.get("/rooms");
     return response.data;
 }
 
 export const getRoomById = (id) => {
-    return axios.get('sale/' + id)
+    return axios.get('rooms/' + id)
         .then((response) => {
             return response.data;})
         .catch((error) => {
@@ -144,7 +144,7 @@ export const addReservation = (new_reservation) => {
     const request = {
         ...new_reservation
     }
-    return axios.post("/rezerwacje", request)
+    return axios.post("/reservations", request)
        .then(response => {
           console.log("Add reservation: ", response);
           return response;
