@@ -5,6 +5,15 @@
   font-family: 'Lucida Sans', sans-serif;
 }
 
+:root {
+  --main-color: rgb(102, 99, 139);
+  --background-color: rgb(220, 218, 253);
+  --overlay-color: rgb(109, 106, 133);
+  --navbar-color1: rgb(43, 43, 54);
+  --navbar-color2: rgb(77, 75, 104);
+  --navbar-hover-color: rgb(92, 96, 143);
+}
+
 .page-container{
   display: flex;
   flex-direction: column;
@@ -13,4 +22,49 @@
 
 .content-wrap{
   flex: 1;
+}
+
+.AddBtn {
+  color:white;
+  background-color: rgb(157, 153, 197);
+  text-align: center;
+  font-size: 1rem;
+  border-radius: 4px;
+  width: 100px;
+  height: 30px;
+  border:none;
+  cursor: pointer;
+}
+
+.AddBtn:hover {
+  background-color: rgb(208, 205, 241);
+  transition: all 0.2s ease-out;
+}
+
+.ctrl-btn {
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  border-radius: 4px;
+  text-shadow:rgb(0, 0, 0) 1px 1px 5px;
+  border-color: transparent;
+  transition: all 0.4s ease;
+  font-size: 1.25rem;
+  padding: 5px;
+  margin: 0;
+}
+
+.ctrl-btn:hover {
+  color: var(--main-color);
+  text-shadow:rgb(255, 255, 255) 1px 1px 5px;
+  cursor: pointer;
+}
+
+.ctrl-btn-small {
+  font-size: 1.1rem;
+  padding: 5px;
+}
+
+.error-msg{
+  color:red;
+  font-size:small;
 }

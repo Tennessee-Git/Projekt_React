@@ -1,20 +1,37 @@
-import React from "react"
+import React, {useState, useEffect} from 'react';
 import MovieDetails from "./MovieDetails"
-import PropTypes from "prop-types"
+import { getMovies, deleteMovie } from '../../api/api'
 
-const MovieList = ({movies}) => {
+const MovieList = () => {
+    const [movies, setMovies] = useState([]);
+
+    useEffect(() =>{
+        const getAllMovies = async () => {
+          const allMovies = await getMovies();
+          if(allMovies) setMovies(allMovies);
+        };
+        getAllMovies();
+      },[]);
+
+    const deleteFunction = (id) => {
+        deleteMovie(id);
+        setMovies(movies.filter((i)=>(i.id !== id)));
+    }
+
     return (
         <div className="card-container"> 
-                    <div className="movie-grid">
-                    {movies.map((movie,key) =>
-                        <MovieDetails key={movie.id} id={movie.id} title={movie.title} imageURL={movie.imageURL}/>)}
-                    </div>
-                </div>
+            <div className="custom-grid">
+                {movies.map((movie,key) =>
+                    <MovieDetails
+                        key={movie.id}
+                        id={movie.id}
+                        title={movie.title}
+                        imageURL={movie.imageURL}
+                        deleteFunc={deleteFunction}/>)
+                }
+            </div>
+        </div>
     )
-}
-
-MovieList.propTypes = {
-    movies: PropTypes.arrayOf(PropTypes.object),
 }
 
 export default MovieList

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { editMovie, getMovieById } from '../../api/api';
 import PropTypes from "prop-types";
+import { Link } from 'react-router-dom';
 
 export default class EditMovieForm extends Component {
     constructor(props) {
@@ -27,12 +28,13 @@ export default class EditMovieForm extends Component {
         this.setState({
             [event.target.name]: event.target.value
         });
+        this.formValidation();
     }
 
     formValidation = () => {
         const {title, imageURL, length} = this.state;
         let isValid = true;
-        const errors ={};
+        let errors ={};
         if(title.trim().length < 5 )
         {
             errors.titleLength = "Tytuł filmu musi mieć co najmniej 5 liter!";
@@ -129,7 +131,9 @@ export default class EditMovieForm extends Component {
                             onChange={(event) => this.handleChange(event)}/>
                     </div>
                 </form>
-                <button className="AddBtn" onClick={this.handleSubmit}>Edytuj</button>
+                <Link to={'/filmy'}>
+                    <button className="AddBtn" onClick={this.handleSubmit}>Edytuj</button>
+                </Link>
             </div>
         )
     }

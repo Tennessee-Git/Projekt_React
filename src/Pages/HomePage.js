@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { getShowingsNow } from '../api/api';
-import ShowingsList from '../Components/Showing Components/ShowingsList';
+import ShowingDetails from '../Components/Showing Components/ShowingDetails';
 
 function HomePage() {
     const [showingsNow, setShowings] = useState([]);
@@ -20,7 +20,18 @@ function HomePage() {
             <br/>
                 <h1>Najbliższe seanse:</h1>
             </div>
-            <ShowingsList showings={showingsNow} />
+            <div className="card-container"> 
+                <div className="custom-grid">
+                    {showingsNow.map((showing,key) =>
+                        <ShowingDetails 
+                        key={showing.id} 
+                        id={showing.id} 
+                        movieTitle={showing.movieTitle} 
+                        date={showing.date} 
+                        roomId={showing.roomId} 
+                        availableSeats={showing.availableSeats}/>)}
+                </div>
+            </div>
         </div>
     )
 }

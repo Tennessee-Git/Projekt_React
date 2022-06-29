@@ -1,10 +1,13 @@
 .main-footer {
     color: white;
-    background-color: rgb(102, 99, 139);
+    background-color: var(--main-color);
+    margin-top: 10px;
     padding-top: 1em;
+    padding-bottom: 1em;
     position: relative;
     bottom: 0;
     padding-left: 1%;
     width: 100%;
     text-align: left;
+    overflow: hidden;
   }

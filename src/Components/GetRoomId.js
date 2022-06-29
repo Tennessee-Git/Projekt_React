@@ -1,17 +1,17 @@
 import React from 'react';
 import {useParams}  from 'react-router-dom';
-import EditMovieForm from './Forms/EditMovieForm';
+import EditRoomForm from './Forms/EditRoomForm';
 import PropTypes from "prop-types";
 
-export default function GetMovieId() {
+export default function GetRoomId() {
     const {id} = useParams();
     console.log(id);
-    
-    return (
-        <EditMovieForm id={Number(id)} />
-    )
+
+  return (
+    <EditRoomForm id={Number(id)}/>
+  )
 }
 
-GetMovieId.propTypes = {
+GetRoomId.propTypes = {
     id: PropTypes.number
 }

@@ -7,6 +7,7 @@ import MoviesPage from './Pages/MoviesPage';
 import ShowingsPage from './Pages/ShowingsPage';
 import GetMovieId from './Components/GetMovieId';
 import GetShowingId from './Components/GetShowingId';
+import GetRoomId from './Components/GetRoomId';
 import RoomsPage from './Pages/RoomsPage';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/sale" exact element={<RoomsPage/>}/>
         <Route exact path="/edytujFilm/:id" element={<GetMovieId/>}/>
         <Route path='/edytujSeans/:id' element={<GetShowingId type="edit"/>}/>
+        <Route path='/edytujSale/:id' element={<GetRoomId/>}/>
         <Route path='/rezerwuj/:id' element={<GetShowingId type="reservation"/>}/>
       </Routes>
           </div>

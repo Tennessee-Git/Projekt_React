@@ -209,24 +209,6 @@
       "id": 19
     },
     {
-      "date": "04-12-2021 17:00",
-      "movieId": 7,
-      "roomId": 5,
-      "movieTitle": "qweert",
-      "availableSeats": 110,
-      "seatsTaken": [],
-      "id": 20
-    },
-    {
-      "date": "04-12-2021 17:30",
-      "movieId": 7,
-      "roomId": 5,
-      "movieTitle": "qweert",
-      "availableSeats": 110,
-      "seatsTaken": [],
-      "id": 21
-    },
-    {
       "date": "04-12-2021 18:30",
       "movieTitle": "teststst",
       "movieId": 5,

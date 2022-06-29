@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {getShowingById, getRoomById, addReservation, editShowing} from '../../api/api';
 import './Form.css';
-import Room from './Room';
 import PropTypes from "prop-types";
+import RoomSeats from './RoomSeats';
 
 export default class ReservationForm extends Component {
     constructor(props) {
@@ -159,7 +159,7 @@ export default class ReservationForm extends Component {
                             <div className="error-msg">{errors.emailAt}</div>
                         </div>
                     </form>
-                    <Room setSelectedSeat={this.setSelectedSeat} capacity={capacity} seatsTaken={showing.seatsTaken}/>
+                    <RoomSeats setSelectedSeat={this.setSelectedSeat} capacity={capacity} seatsTaken={showing.seatsTaken}/>
                     <div className="error-msg">{errors.seat}</div>
                     <br/>
                 <button className="AddBtn" onClick={this.handleSubmit}>Rezerwuj</button>

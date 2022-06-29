@@ -1,11 +1,17 @@
-.movie-grid {
+.custom-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
 }
 
+@media (max-width: 600px) {
+  .custom-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (min-width: 992px) {
-  .movie-grid {
+  .custom-grid {
     grid-template-columns: repeat(5, 1fr);
   }
 }
@@ -20,6 +26,12 @@
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+}
+
+@media (min-width: 600) {
+  .card-container {
+    width: 500;
+  }
 }
 
 @media (min-width: 768px) {

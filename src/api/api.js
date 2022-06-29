@@ -33,7 +33,7 @@ export const addMovie = (new_movie) => {
        });
  }
 
- export const deleteMovie = (id) => {
+export const deleteMovie = (id) => {
     return axios.delete("/movies/" + id)
         .then((response) => {
             console.log("Delete: ", response);
@@ -122,6 +122,17 @@ export const getShowingsNow = async () => {
     return output;
 }
 
+export const deleteShowing = (id) => {
+    return axios.delete("/showings/" + id)
+        .then((response) => {
+            console.log("Delete: ", response);
+            return response;
+        })
+        .catch((error) => {
+            return error;
+        });
+}
+
 //Związane z salami
 
 export const getRooms = async () => {
@@ -135,6 +146,52 @@ export const getRoomById = (id) => {
             return response.data;})
         .catch((error) => {
             console.error('Error: ', error);
+            return error;
+        });
+}
+
+export const getRoomCount = async () => {
+    const response = await axios.get("/rooms");
+    let data = response.data;
+    console.log(data);
+    let number = data.length;
+    console.log(number);
+    return number;
+}
+
+export const addRoom = (new_room) => {
+    const request = {
+        ...new_room
+    }
+    return axios.post("/rooms", request)
+       .then(response => {
+          console.log("Add room: ", response);
+          return response;
+       }).catch(err => {
+          if (err.response.status === 304) console.log("Duplicate data -", new_room);
+          else console.log(err);
+          return err.response;
+       });
+}
+
+export const editRoom = (room) => {
+    return axios.put(`/rooms/${room.id}`, room)
+        .then((response) => {
+            console.log("Edit: ", response);
+            return response;
+        })
+        .catch((error) => {
+            return error;
+        });
+}
+
+export const deleteRoom = (id) => {
+    return axios.delete("/rooms/" + id)
+        .then((response) => {
+            console.log("Delete: ", response);
+            return response;
+        })
+        .catch((error) => {
             return error;
         });
 }
