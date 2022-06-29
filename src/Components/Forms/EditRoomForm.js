@@ -31,14 +31,12 @@ export default class EditRoomForm extends Component {
         this.setState({
             [event.target.name]: event.target.value
         });
-
-        this.setState({isValid:this.formValidation()})
     }
 
     formValidation = () => {
         const {newCapacity} = this.state;
         let isValid = true;
-        let errors = {};
+        const errors = {};
         if( newCapacity < 30) {
           errors.minCapacity = "Sala musi mieć minimum 30 miejsc!";
           isValid = false;
@@ -53,8 +51,8 @@ export default class EditRoomForm extends Component {
 
     handleSubmit = event => {
         if(this.state.newCapacity !== 0) {
-            this.state.isValid.setState(this.formValidation());
-            if(this.state.isValid) {
+            const isValid = this.formValidation();
+            if(isValid) {
                 let updated_room = {
                     id: this.state.id,
                     value: this.state.value,
@@ -70,29 +68,25 @@ export default class EditRoomForm extends Component {
         const {errors} = this.state;
         return (
             <div className='form-wrapper'>
-            <h2>Edytuj informacje o sali</h2>
-            <br/>
-            <form onSubmit={this.handleSubmit}>
-                <div className='form-inputs'>
-                    <label>Pojemność:</label>
-                    <input 
-                    required
-                    id="newCapacity"
-                    name='newCapacity'
-                    type='number'
-                    placeholder='Podaj pojemność sali'
-                    onChange={(event) => this.handleChange(event)}/>
-                    <div className="error-msg">{errors.minCapacity}</div>
-                    <div className="error-msg">{errors.maxCapacity}</div>
-                </div>
-            </form>
-            <Link to={'/sale'}>
-                <button className="AddBtn" onClick={this.handleSubmit}>
-                    Edytuj
-                </button>
-            </Link>
-            
-      </div>
+                <h2>Edytuj informacje o sali</h2>
+                <br/>
+                <form onSubmit={this.handleSubmit}>
+                    <div className='form-inputs'>
+                        <label>Pojemność:</label>
+                        <input 
+                        id="newCapacity"
+                        name='newCapacity'
+                        type='number'
+                        placeholder='Podaj pojemność sali'
+                        onChange={(event) => this.handleChange(event)}/>
+                        <div className="error-msg">{errors.minCapacity}</div>
+                        <div className="error-msg">{errors.maxCapacity}</div>
+                    </div>
+                </form>
+                <Link to="/sale" className='fit-link'>
+                    <button className="AddBtn" onClick={this.handleSubmit}>Edytuj</button>
+                </Link>
+            </div>
         )
     }
 }

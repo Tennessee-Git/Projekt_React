@@ -48,10 +48,11 @@ export default class AddRoomForm extends Component {
       let new_room = {
         label: "Sala " + String(this.state.value),
         value: this.state.value,
-        capacity: this.state.capacity
+        capacity: Number(this.state.capacity)
       }
       addRoom(new_room);
       this.props.closeDialog();
+      // this.props.addRoom(this.state.value);
     }
   }
 

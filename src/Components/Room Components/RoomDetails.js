@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import './RoomStyle.css';
 
-const RoomDetails = ({id, label, value, capacity, deleteFunc}) => {
+const RoomDetails = ({id, label, capacity, deleteFunc}) => {
   return (
     <div className='room-card'>
         <div className='room-details'>

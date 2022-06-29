@@ -3,6 +3,7 @@ import {getShowingById, getRoomById, addReservation, editShowing} from '../../ap
 import './Form.css';
 import PropTypes from "prop-types";
 import RoomSeats from './RoomSeats';
+import { Link } from 'react-router-dom';
 
 export default class ReservationForm extends Component {
     constructor(props) {
@@ -162,9 +163,10 @@ export default class ReservationForm extends Component {
                     <RoomSeats setSelectedSeat={this.setSelectedSeat} capacity={capacity} seatsTaken={showing.seatsTaken}/>
                     <div className="error-msg">{errors.seat}</div>
                     <br/>
-                <button className="AddBtn" onClick={this.handleSubmit}>Rezerwuj</button>
+                <Link to="/seanse" className="fit-link">
+                    <button className="AddBtn" onClick={this.handleSubmit}>Rezerwuj</button>
+                </Link>
                 </div>
-                
             </div>
         )
     }

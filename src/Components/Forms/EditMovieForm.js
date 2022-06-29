@@ -131,7 +131,7 @@ export default class EditMovieForm extends Component {
                             onChange={(event) => this.handleChange(event)}/>
                     </div>
                 </form>
-                <Link to={'/filmy'}>
+                <Link to="/filmy" className='fit-link'>
                     <button className="AddBtn" onClick={this.handleSubmit}>Edytuj</button>
                 </Link>
             </div>

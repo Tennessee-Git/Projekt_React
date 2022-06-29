@@ -61,3 +61,7 @@ input::placeholder {
 .inline-image{
     margin-right: 20px;
 }
+
+.fit-link {
+    width: fit-content;
+}
