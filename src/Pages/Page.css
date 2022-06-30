@@ -21,6 +21,17 @@
   text-align: center;
 }
 
+.popularity {
+  display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+@media (max-width: 950px) {
+  .popularity {
+    grid-template-columns: 1fr;
+  }
+}
+
 .card-container {
   padding-right: 15px;
   padding-left: 15px;

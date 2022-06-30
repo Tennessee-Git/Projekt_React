@@ -6,6 +6,7 @@ import moment from 'moment';
 import PropTypes from "prop-types";
 import "react-datepicker/dist/react-datepicker.css";
 import './Form.css';
+import { Link } from 'react-router-dom';
 
 const customTheme = theme => ({
     ...theme,
@@ -164,7 +165,10 @@ export default class EditShowingForm extends Component {
                     </div>
                 </form>
                 <br/>
-                <button className="AddBtn" onClick={this.handleSubmit}>Edytuj</button>
+                <Link to="/seanse" className='fit-link'>
+                    <button className="AddBtn" onClick={this.handleSubmit}>Edytuj</button>
+                </Link>
+
             </div>
         )
     }

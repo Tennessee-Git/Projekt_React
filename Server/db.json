@@ -137,78 +137,6 @@
   ],
   "showings": [
     {
-      "date": "28.11.2021 19:00",
-      "movieId": 2,
-      "roomId": 2,
-      "movieTitle": "Test2",
-      "id": 2,
-      "availableSeats": 100,
-      "seatsTaken": []
-    },
-    {
-      "date": "28-11-2021 14:00",
-      "movieTitle": "Test1",
-      "movieId": 1,
-      "roomId": 2,
-      "id": 8,
-      "availableSeats": 100,
-      "seatsTaken": []
-    },
-    {
-      "date": "28-11-2021 14:17",
-      "movieTitle": "Test1",
-      "movieId": 1,
-      "roomId": 2,
-      "id": 9,
-      "availableSeats": 100,
-      "seatsTaken": []
-    },
-    {
-      "date": "28-11-2021 14:17",
-      "movieId": 2,
-      "roomId": 2,
-      "movieTitle": "test2",
-      "availableSeats": 100,
-      "seatsTaken": [],
-      "id": 10
-    },
-    {
-      "date": "04-12-2021 17:00",
-      "movieId": 1,
-      "roomId": 5,
-      "movieTitle": "Test1",
-      "availableSeats": 110,
-      "seatsTaken": [],
-      "id": 15
-    },
-    {
-      "date": "04-12-2021 17:00",
-      "movieId": 2,
-      "roomId": 2,
-      "movieTitle": "test2",
-      "availableSeats": 100,
-      "seatsTaken": [],
-      "id": 16
-    },
-    {
-      "date": "04-12-2021 16:30",
-      "movieId": 9,
-      "roomId": 3,
-      "movieTitle": "jjjj",
-      "availableSeats": 80,
-      "seatsTaken": [],
-      "id": 18
-    },
-    {
-      "date": "04-12-2021 17:00",
-      "movieId": 9,
-      "roomId": 3,
-      "movieTitle": "jjjj",
-      "availableSeats": 80,
-      "seatsTaken": [],
-      "id": 19
-    },
-    {
       "date": "04-12-2021 18:30",
       "movieTitle": "teststst",
       "movieId": 5,
@@ -247,6 +175,38 @@
       "availableSeats": 90,
       "seatsTaken": [],
       "id": 25
+    },
+    {
+      "date": "01-07-2022 09:03",
+      "movieId": 1,
+      "roomId": 2,
+      "movieTitle": "Test1",
+      "availableSeats": 100,
+      "seatsTaken": [],
+      "id": 26
+    },
+    {
+      "date": "02-07-2022 09:03",
+      "movieId": 4,
+      "roomId": 5,
+      "movieTitle": "test3",
+      "availableSeats": 109,
+      "seatsTaken": [
+        "A-5"
+      ],
+      "id": 27
+    },
+    {
+      "date": "02-07-2022 09:04",
+      "movieId": 5,
+      "roomId": 4,
+      "movieTitle": "teststst",
+      "availableSeats": 88,
+      "seatsTaken": [
+        "A-4",
+        "A-5"
+      ],
+      "id": 28
     }
   ],
   "reservations": [
@@ -385,6 +345,30 @@
       "seansId": 22,
       "seatCode": "C-8",
       "id": 19
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "awramiukofficial@gmail.com",
+      "seansId": 28,
+      "seatCode": "A-4",
+      "id": 20
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "awramiukofficial@gmail.com",
+      "seansId": 28,
+      "seatCode": "A-5",
+      "id": 21
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "awramiukofficial@gmail.com",
+      "seansId": 27,
+      "seatCode": "A-5",
+      "id": 22
     }
   ]
 }
