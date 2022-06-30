@@ -59,6 +59,12 @@
       "label": "Sala 10",
       "value": 10,
       "capacity": 90
+    },
+    {
+      "label": "Sala 11",
+      "value": 11,
+      "capacity": 123,
+      "id": 11
     }
   ],
   "movies": [
@@ -133,6 +139,15 @@
       "value": 8,
       "popularity": 0,
       "id": 10
+    },
+    {
+      "title": "TESTOWY",
+      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Test.svg",
+      "length": 123,
+      "label": "TESTOWY",
+      "value": 9,
+      "popularity": 0,
+      "id": 11
     }
   ],
   "showings": [
@@ -198,15 +213,17 @@
     },
     {
       "date": "02-07-2022 09:04",
+      "movieTitle": "teststst",
       "movieId": 5,
       "roomId": 4,
-      "movieTitle": "teststst",
-      "availableSeats": 88,
+      "id": 28,
+      "availableSeats": 85,
       "seatsTaken": [
         "A-4",
-        "A-5"
-      ],
-      "id": 28
+        "A-5",
+        "C-6",
+        "A-3"
+      ]
     },
     {
       "date": "30-06-2022 06:00",
@@ -221,14 +238,72 @@
     },
     {
       "date": "29-06-2022 11:44",
+      "movieTitle": "test3",
       "movieId": 4,
       "roomId": 3,
-      "movieTitle": "test3",
-      "availableSeats": 79,
+      "id": 30,
+      "availableSeats": 76,
       "seatsTaken": [
-        "A-5"
-      ],
-      "id": 30
+        "A-5",
+        "A-6",
+        "G-5"
+      ]
+    },
+    {
+      "date": "30-06-2022 10:00",
+      "movieTitle": "test2",
+      "movieId": 2,
+      "roomId": 4,
+      "id": 31,
+      "availableSeats": 88,
+      "seatsTaken": [
+        "A-3"
+      ]
+    },
+    {
+      "date": "30-06-2022 10:30",
+      "movieTitle": "teststst",
+      "movieId": 5,
+      "roomId": 4,
+      "id": 32,
+      "availableSeats": 85,
+      "seatsTaken": [
+        "A-5",
+        "D-7",
+        "A-4",
+        "F-3"
+      ]
+    },
+    {
+      "date": "30-06-2022 12:00",
+      "movieId": 8,
+      "roomId": 3,
+      "movieTitle": "asdasd",
+      "availableSeats": 80,
+      "seatsTaken": [],
+      "id": 33
+    },
+    {
+      "date": "30-06-2022 14:00",
+      "movieTitle": "1235adsf",
+      "movieId": 7,
+      "roomId": 3,
+      "id": 34,
+      "availableSeats": 78,
+      "seatsTaken": [
+        "A-4"
+      ]
+    },
+    {
+      "date": "30-06-2022 13:30",
+      "movieTitle": "TESTOWY",
+      "movieId": 9,
+      "roomId": 11,
+      "id": 35,
+      "availableSeats": 121,
+      "seatsTaken": [
+        "C-4"
+      ]
     }
   ],
   "reservations": [
@@ -407,6 +482,94 @@
       "seansId": 29,
       "seatCode": "A-6",
       "id": 24
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "awramiukofficial@gmail.com",
+      "seansId": 28,
+      "seatCode": "C-6",
+      "id": 25
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "awramiukofficial@gmail.com",
+      "seansId": 28,
+      "seatCode": "A-3",
+      "id": 26
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "awramiukofficial@gmail.com",
+      "seansId": 30,
+      "seatCode": "A-6",
+      "id": 27
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "awramiukofficial@gmail.com",
+      "seansId": 31,
+      "seatCode": "A-3",
+      "id": 28
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "awramiukofficial@gmail.com",
+      "seansId": 30,
+      "seatCode": "G-5",
+      "id": 29
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "awramiukofficial@gmail.com",
+      "seansId": 32,
+      "seatCode": "A-5",
+      "id": 30
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "awramiukofficial@gmail.com",
+      "seansId": 32,
+      "seatCode": "D-7",
+      "id": 31
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "awramiukofficial@gmail.com",
+      "seansId": 32,
+      "seatCode": "A-4",
+      "id": 32
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "awramiukofficial@gmail.com",
+      "seansId": 32,
+      "seatCode": "F-3",
+      "id": 33
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "awramiukofficial@gmail.com",
+      "seansId": 35,
+      "seatCode": "C-4",
+      "id": 34
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "awramiukofficial@gmail.com",
+      "seansId": 34,
+      "seatCode": "A-4",
+      "id": 35
     }
   ]
 }
