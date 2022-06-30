@@ -207,6 +207,28 @@
         "A-5"
       ],
       "id": 28
+    },
+    {
+      "date": "30-06-2022 06:00",
+      "movieId": 2,
+      "roomId": 3,
+      "movieTitle": "test2",
+      "id": 29,
+      "availableSeats": 79,
+      "seatsTaken": [
+        "A-6"
+      ]
+    },
+    {
+      "date": "29-06-2022 11:44",
+      "movieId": 4,
+      "roomId": 3,
+      "movieTitle": "test3",
+      "availableSeats": 79,
+      "seatsTaken": [
+        "A-5"
+      ],
+      "id": 30
     }
   ],
   "reservations": [
@@ -369,6 +391,22 @@
       "seansId": 27,
       "seatCode": "A-5",
       "id": 22
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "awramiukofficial@gmail.com",
+      "seansId": 30,
+      "seatCode": "A-5",
+      "id": 23
+    },
+    {
+      "name": "",
+      "lastName": "",
+      "email": "",
+      "seansId": 29,
+      "seatCode": "A-6",
+      "id": 24
     }
   ]
 }

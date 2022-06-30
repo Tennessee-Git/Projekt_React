@@ -111,14 +111,31 @@ export const getShowingById = async (id) => {
 
 export const getShowingsNow = async () => {
     const response = await axios.get("/showings");
-    let showingsNow = response.data;
-    const now = moment().format('DD-MM-YYYY HH:mm');
+    let showings = response.data;
+    const now = moment();
     let output =[];
-    showingsNow.forEach(showing => {
-        if(moment(showing.date).isSameOrAfter(now))
-            output.push(showing);
+    showings.forEach(showing => {
+        if(moment(showing.date, 'DD-MM-YYYY HH:mm').isSameOrAfter(now))
+                output.push(showing);
     });
-    output.sort((a,b) => ((moment(a.date)).isSameOrAfter(moment(b.date))) ? 1 : -1);
+    output.sort((a,b) => ((moment(a.date, 'DD-MM-YYYY HH:mm')).isSameOrAfter(moment(b.date, 'DD-MM-YYYY HH:mm'))) ? 1 : -1);
+    return output;
+}
+
+export const getShowingsFromLast7Days = async () => {
+    const response = await axios.get("/showings");
+    let showings = response.data;
+    const now = moment(new Date());
+    const before = moment(now).subtract(7, 'd');
+    // console.log('NOW:', now.format('DD-MM-YYYY HH:mm'));
+    // console.log('BEFORE', before.format('DD-MM-YYYY HH:mm'));
+    let output = [];
+    showings.forEach( showing => {
+        if((moment(showing.date, 'DD-MM-YYYY HH:mm')).isBetween(before, now))
+            {
+                output.push(showing);
+            }
+        });
     return output;
 }
 

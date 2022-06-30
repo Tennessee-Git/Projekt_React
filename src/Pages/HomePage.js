@@ -1,22 +1,24 @@
 import React, {useEffect, useState} from 'react';
-// import { filterFromLast7Days, filterShowingsNow } from '../api/filters';
-import { getShowings } from '../api/api';
-import PopularityChart from '../Components/Popularity Components/PopularityChart';
+import { getShowingsNow, getShowingsFromLast7Days } from '../api/api';
 import ShowingDetails from '../Components/Showing Components/ShowingDetails';
+import PopularityChart from '../Components/Popularity Components/PopularityChart';
 
 function HomePage() {
-    const [showings, setShowings] = useState([]);
-    // const [showingsNow, setShowingsNow] = useState([]);
+    const [showingsNow, setShowingsNow] = useState([]);
+    const [showingsFromLast7Days, setShowingsFromLast7Days] = useState([]);
 
     useEffect(() =>{
         const getAllShowings = async () => {
-            const allShowings = await getShowings();
-            if(allShowings)
-                setShowings(allShowings);
+            const showingNowAndAfter = await getShowingsNow();
+            if(showingNowAndAfter)
+                setShowingsNow(showingNowAndAfter);
+            const showingsFromBefore = await getShowingsFromLast7Days();
+            if(showingsFromBefore)
+                setShowingsFromLast7Days(showingsFromBefore);
         };
         getAllShowings();
-        console.log(showings)
-      },[]);
+    },[]);
+
 
     return (
         <div>
@@ -26,7 +28,7 @@ function HomePage() {
             </div>
             <div className="card-container">
                 <div className="custom-grid">
-                    {showings.map((showing,key) =>
+                    {showingsNow.map((showing,key) =>
                         <ShowingDetails
                         key={key}
                         id={showing.id}
@@ -35,21 +37,10 @@ function HomePage() {
                         roomId={showing.roomId}
                         availableSeats={showing.availableSeats}/>)}
                 </div>
-                {/* <p>GAMING</p>
-                <div className="custom-grid">
-                    {filterShowingsNow(showings).map((showing,key) =>
-                        <ShowingDetails
-                        key={key}
-                        id={showing.id}
-                        movieTitle={showing.movieTitle}
-                        date={showing.date}
-                        roomId={showing.roomId}
-                        availableSeats={showing.availableSeats}/>)}
-                </div> */}
             </div>
-            {/* <div className='popularity'>
-                <PopularityChart showings={showings}></PopularityChart>
-            </div> */}
+            <div className='popularity'>
+                <PopularityChart showings={showingsFromLast7Days}></PopularityChart>
+            </div>
         </div>
     )
 }
