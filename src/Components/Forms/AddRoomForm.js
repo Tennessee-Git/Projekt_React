@@ -51,8 +51,8 @@ export default class AddRoomForm extends Component {
         capacity: Number(this.state.capacity)
       }
       addRoom(new_room);
+      this.props.addFunction(new_room);
       this.props.closeDialog();
-      // this.props.addRoom(this.state.value);
     }
   }
 

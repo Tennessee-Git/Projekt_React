@@ -1,23 +1,7 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import MovieDetails from "./MovieDetails"
-import { getMovies, deleteMovie } from '../../api/api'
 
-const MovieList = () => {
-    const [movies, setMovies] = useState([]);
-
-    useEffect(() =>{
-        const getAllMovies = async () => {
-          const allMovies = await getMovies();
-          if(allMovies) setMovies(allMovies);
-        };
-        getAllMovies();
-      },[]);
-
-    const deleteFunction = (id) => {
-        deleteMovie(id);
-        setMovies(movies.filter((i)=>(i.id !== id)));
-    }
-
+const MovieList = ({movies, deleteFunc}) => {
     return (
         <div className="card-container"> 
             <div className="custom-grid">
@@ -27,7 +11,7 @@ const MovieList = () => {
                         id={movie.id}
                         title={movie.title}
                         imageURL={movie.imageURL}
-                        deleteFunc={deleteFunction}/>)
+                        deleteFunc={deleteFunc}/>)
                 }
             </div>
         </div>

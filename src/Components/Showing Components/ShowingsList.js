@@ -1,24 +1,8 @@
-import React, {useState, useEffect} from 'react';
-import { getShowings, deleteShowing } from '../../api/api'
+import React from 'react';
 import ShowingDetails from './ShowingDetails'
 import PropTypes from "prop-types"
 
-const ShowingsList = () => {
-    const [showings, setShowings] = useState([]);
-
-    useEffect(() =>{
-        const getAllShowings = async () => {
-          const allShowings = await getShowings();
-          if(allShowings) setShowings(allShowings);
-        };
-        getAllShowings();
-      },[]);
-
-    const deleteFunction = (id) => {
-        deleteShowing(id);
-        setShowings(showings.filter((i)=>(i.id !== id)));
-    }
-
+const ShowingsList = ({showings, deleteFunc}) => {
     return (
         <div className="card-container"> 
             <div className="custom-grid">
@@ -30,7 +14,7 @@ const ShowingsList = () => {
                 date={showing.date} 
                 roomId={showing.roomId} 
                 availableSeats={showing.availableSeats}
-                deleteFunc={deleteFunction}/>)}
+                deleteFunc={deleteFunc}/>)}
             </div>
         </div>
     )

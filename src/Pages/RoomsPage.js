@@ -1,20 +1,39 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './Page.css';
 import AddRoomForm from '../Components/Forms/AddRoomForm'
 import RoomList from '../Components/Room Components/RoomList'
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
+import { getRooms, deleteRoom } from '../api/api';
 
 export default function RoomsPage() {
   const [open, setOpen] = useState(false);
+  const [rooms, setRooms] = useState([]);
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
+    useEffect(() =>{
+        const getAllRooms = async () => {
+          const allRooms = await getRooms();
+          if(allRooms) setRooms(allRooms);
+        };
+        getAllRooms();
+      },[]);
 
-  const handleClose = () => {
-    setOpen(false);
-  };
+    const deleteFunction = (id) => {
+        deleteRoom(id);
+        setRooms(rooms.filter((i)=>(i.id !== id)));
+    }
+
+    const addFunction = (room) => {
+      setRooms(rooms => [...rooms, room]);
+    };
+
+    const handleClickOpen = () => {
+      setOpen(true);
+    };
+
+    const handleClose = () => {
+      setOpen(false);
+    };
 
   return (
     <div>
@@ -22,19 +41,17 @@ export default function RoomsPage() {
               <br/>
               <h1>Lista sal kinowych: <button className="AddBtn"
                 onClick={handleClickOpen}>Dodaj salę</button></h1>
-              
               <Dialog
                 open={open}
                 onClose={handleClose}
                 maxWidth='600px'
               >
                 <DialogContent>
-                <AddRoomForm closeDialog={handleClose}/>
+                <AddRoomForm closeDialog={handleClose} addFunction={addFunction}/>
                 </DialogContent>
               </Dialog>
-
           </div>
-          <RoomList/>
+          <RoomList rooms={rooms} deleteFunc={deleteFunction}/>
     </div>
   )
 }

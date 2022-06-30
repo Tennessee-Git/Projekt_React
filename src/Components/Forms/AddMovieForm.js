@@ -68,6 +68,7 @@ export default class AddMovieForm extends Component {
                 popularity: 0
             };
             addMovie(new_movie);
+            this.props.addFunction(new_movie);
             this.props.closeDialog();
         }
         

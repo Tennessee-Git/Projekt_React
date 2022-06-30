@@ -284,17 +284,6 @@
       "id": 33
     },
     {
-      "date": "30-06-2022 14:00",
-      "movieTitle": "1235adsf",
-      "movieId": 7,
-      "roomId": 3,
-      "id": 34,
-      "availableSeats": 78,
-      "seatsTaken": [
-        "A-4"
-      ]
-    },
-    {
       "date": "30-06-2022 13:30",
       "movieTitle": "TESTOWY",
       "movieId": 9,
@@ -304,6 +293,15 @@
       "seatsTaken": [
         "C-4"
       ]
+    },
+    {
+      "date": "30-06-2022 16:58",
+      "movieId": 2,
+      "roomId": 2,
+      "movieTitle": "test2",
+      "availableSeats": 100,
+      "seatsTaken": [],
+      "id": 36
     }
   ],
   "reservations": [
