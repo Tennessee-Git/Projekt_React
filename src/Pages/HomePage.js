@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { getShowingsNow, getShowingsFromLast7Days } from '../api/api';
 import ShowingDetails from '../Components/Showing Components/ShowingDetails';
 import PopularityChart from '../Components/Popularity Components/PopularityChart';
+import { PopularityTable } from '../Components/Popularity Components/PopularityTable';
 
 function HomePage() {
     const [showingsNow, setShowingsNow] = useState([]);
@@ -38,8 +39,10 @@ function HomePage() {
                         availableSeats={showing.availableSeats}/>)}
                 </div>
             </div>
+            <br/>
             <div className='popularity'>
                 <PopularityChart showings={showingsFromLast7Days}></PopularityChart>
+                <PopularityTable showings={showingsFromLast7Days}></PopularityTable>
             </div>
         </div>
     )
