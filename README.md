@@ -11,7 +11,7 @@ Aplikacja do zarządzania seansami w kinie
 - wyświetlanie aktualnie trwających seansów
 - wyświetlanie tabeli/wykresu popularności filmów na podstawie liczby sprzedanych biletów
 
-### `Uruchamianie aplikacji:`
+# Uruchamianie aplikacji:
 Po pobraniu repozytorium i otwarciu w VS Code, otwieramy dodatkowy terminal.
 W jednym (nr 1) przechodzimy do folderu projekt_react (cd projekt_react), natomiast w drugim (nr 2) do projekt_react\Server(cd projekt_react\Server).
 
