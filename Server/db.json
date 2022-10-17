@@ -65,6 +65,12 @@
       "value": 11,
       "capacity": 123,
       "id": 11
+    },
+    {
+      "id": 12,
+      "label": "Sala 12",
+      "value": 12,
+      "capacity": 123
     }
   ],
   "movies": [
@@ -94,15 +100,6 @@
       "value": 4,
       "popularity": 0,
       "id": 4
-    },
-    {
-      "title": "teststst",
-      "imageURL": "https://cdn.shopify.com/s/files/1/1057/4964/products/titanic-vintage-movie-poster-original-1-sheet-27x41-4984_300x@2x.jpg?v=1610139646",
-      "length": 455,
-      "label": "teststst",
-      "value": 5,
-      "popularity": 0,
-      "id": 5
     },
     {
       "title": "asdas",
@@ -148,22 +145,18 @@
       "value": 9,
       "popularity": 0,
       "id": 11
+    },
+    {
+      "id": 12,
+      "title": "nowyFilm",
+      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Test-Logo.svg/783px-Test-Logo.svg.png",
+      "length": 123,
+      "label": "nowyFilm",
+      "value": 12,
+      "popularity": 0
     }
   ],
   "showings": [
-    {
-      "date": "04-12-2021 18:30",
-      "movieTitle": "teststst",
-      "movieId": 5,
-      "roomId": 6,
-      "id": 22,
-      "availableSeats": 77,
-      "seatsTaken": [
-        "A-5",
-        "A-3",
-        "C-8"
-      ]
-    },
     {
       "date": "05-12-2021 16:30",
       "movieId": 1,
@@ -212,20 +205,6 @@
       "id": 27
     },
     {
-      "date": "02-07-2022 09:04",
-      "movieTitle": "teststst",
-      "movieId": 5,
-      "roomId": 4,
-      "id": 28,
-      "availableSeats": 85,
-      "seatsTaken": [
-        "A-4",
-        "A-5",
-        "C-6",
-        "A-3"
-      ]
-    },
-    {
       "date": "30-06-2022 06:00",
       "movieId": 2,
       "roomId": 3,
@@ -258,20 +237,6 @@
       "availableSeats": 88,
       "seatsTaken": [
         "A-3"
-      ]
-    },
-    {
-      "date": "30-06-2022 10:30",
-      "movieTitle": "teststst",
-      "movieId": 5,
-      "roomId": 4,
-      "id": 32,
-      "availableSeats": 85,
-      "seatsTaken": [
-        "A-5",
-        "D-7",
-        "A-4",
-        "F-3"
       ]
     },
     {
