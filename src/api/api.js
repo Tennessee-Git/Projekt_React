@@ -1,6 +1,6 @@
 import axios from "axios";
 import moment from "moment";
-axios.defaults.baseURL = "http://localhost:3006";
+axios.defaults.baseURL = "http://localhost:3008";
 
 //Związane z filmami
 

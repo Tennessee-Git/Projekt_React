@@ -61,22 +61,16 @@
       "capacity": 90
     },
     {
+      "id": 11,
       "label": "Sala 11",
       "value": 11,
-      "capacity": 123,
-      "id": 11
-    },
-    {
-      "id": 12,
-      "label": "Sala 12",
-      "value": 12,
       "capacity": 123
     }
   ],
   "movies": [
     {
       "title": "Test1",
-      "imageURL": "https://cdn11.bigcommerce.com/s-ydriczk/images/stencil/1280x1280/products/89058/93685/Joker-2019-Final-Style-steps-Poster-buy-original-movie-posters-at-starstills__62518.1572351179.jpg?c=2",
+      "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB_w97DRzLt2NKJP-7ypiIi4GshyMz8WM3Fym6EV88IhuiFAvit_ghqp4B3_gPHlNhWtQ&usqp=CAU",
       "length": 104,
       "label": "Test1",
       "popularity": 0,
@@ -85,7 +79,7 @@
     },
     {
       "title": "test2",
-      "imageURL": "https://m.media-amazon.com/images/I/91jatiUZjtL._AC_SY741_.jpg",
+      "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB_w97DRzLt2NKJP-7ypiIi4GshyMz8WM3Fym6EV88IhuiFAvit_ghqp4B3_gPHlNhWtQ&usqp=CAU",
       "length": 125,
       "label": "test2",
       "value": 2,
@@ -94,65 +88,56 @@
     },
     {
       "title": "test3",
-      "imageURL": "https://www.komar.de/en/media/catalog/product/cache/5/image/9df78eab33525d08d6e5fb8d27136e95/4/-/4-4113_star_wars_movie_poster_rey_ma.jpg",
-      "length": 12312,
-      "label": "test3",
+      "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB_w97DRzLt2NKJP-7ypiIi4GshyMz8WM3Fym6EV88IhuiFAvit_ghqp4B3_gPHlNhWtQ&usqp=CAU",
+      "length": 125,
+      "label": "test2",
+      "value": 3,
+      "popularity": 0,
+      "id": 3
+    },
+    {
+      "id": 4,
+      "title": "123456",
+      "imageURL": "https://i.ebayimg.com/images/g/zK4AAOSw3b9cjJz0/s-l400.jpg",
+      "length": null,
+      "label": "123456",
       "value": 4,
-      "popularity": 0,
-      "id": 4
+      "popularity": 0
     },
     {
-      "title": "asdas",
-      "imageURL": "https://cdn.pastemagazine.com/www/system/images/photo_albums/best-movie-posters-2016/large/moonlight-ver2-xlg.jpg?1384968217",
-      "length": 121,
-      "label": "asdas",
+      "id": 5,
+      "title": "test123",
+      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Test-Logo.svg/783px-Test-Logo.svg.png",
+      "length": 123,
+      "label": "test123",
+      "value": 5,
+      "popularity": 0
+    },
+    {
+      "id": 6,
+      "title": "test1234",
+      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Test.svg",
+      "length": 123,
+      "label": "test1234",
       "value": 6,
-      "popularity": 0,
-      "id": 6
+      "popularity": 0
     },
     {
-      "title": "asdasd",
-      "imageURL": "https://i5.walmartimages.com/asr/149d1fd0-2254-421f-89d8-fe8d0f879b2d.45ce4ae056c8c0b3b1fce677f437a252.jpeg",
-      "length": 6969,
-      "label": "asdasd",
-      "value": 8,
-      "popularity": 0,
-      "id": 8
-    },
-    {
-      "title": "1235adsf",
-      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Test.svg",
-      "length": 123,
-      "label": "1235adsf",
+      "id": 7,
+      "title": "test12345",
+      "imageURL": "https://przedszkole.doruchow.pl/wp-content/uploads/2017/08/test.png",
+      "length": 44,
+      "label": "test12345",
       "value": 7,
-      "popularity": 0,
-      "id": 9
+      "popularity": 0
     },
     {
-      "title": "asdfgh",
-      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Test-Logo.svg/783px-Test-Logo.svg.png",
-      "length": 5324,
-      "label": "asdfgh",
+      "id": 8,
+      "title": "nowyfilm",
+      "imageURL": "https://i.ebayimg.com/images/g/zK4AAOSw3b9cjJz0/s-l400.jpg",
+      "length": 123,
+      "label": "nowyfilm",
       "value": 8,
-      "popularity": 0,
-      "id": 10
-    },
-    {
-      "title": "TESTOWY",
-      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Test.svg",
-      "length": 123,
-      "label": "TESTOWY",
-      "value": 9,
-      "popularity": 0,
-      "id": 11
-    },
-    {
-      "id": 12,
-      "title": "nowyFilm",
-      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Test-Logo.svg/783px-Test-Logo.svg.png",
-      "length": 123,
-      "label": "nowyFilm",
-      "value": 12,
       "popularity": 0
     }
   ],
@@ -167,372 +152,98 @@
       "id": 23
     },
     {
-      "date": "05-12-2021 17:00",
-      "movieId": 2,
-      "roomId": 1,
-      "movieTitle": "test2",
-      "availableSeats": 90,
-      "seatsTaken": [],
-      "id": 24
-    },
-    {
-      "date": "05-12-2021 17:00",
-      "movieId": 2,
-      "roomId": 7,
-      "movieTitle": "test2",
-      "availableSeats": 90,
-      "seatsTaken": [],
-      "id": 25
-    },
-    {
-      "date": "01-07-2022 09:03",
-      "movieId": 1,
-      "roomId": 2,
-      "movieTitle": "Test1",
-      "availableSeats": 100,
-      "seatsTaken": [],
-      "id": 26
-    },
-    {
-      "date": "02-07-2022 09:03",
+      "id": 25,
+      "date": "16-10-2022 09:00",
       "movieId": 4,
+      "roomId": 7,
+      "movieTitle": "123456",
+      "availableSeats": 86,
+      "seatsTaken": [
+        "B-3",
+        "I-10",
+        "B-4"
+      ]
+    },
+    {
+      "date": "18-10-2022 17:17",
+      "movieId": 6,
+      "roomId": 3,
+      "movieTitle": "test1234",
+      "availableSeats": 80,
+      "seatsTaken": [],
+      "id": 27
+    },
+    {
+      "date": "18-10-2022 19:17",
+      "movieId": 6,
       "roomId": 5,
-      "movieTitle": "test3",
+      "movieTitle": "test1234",
       "availableSeats": 109,
       "seatsTaken": [
         "A-5"
       ],
-      "id": 27
+      "id": 28
     },
     {
-      "date": "30-06-2022 06:00",
-      "movieId": 2,
-      "roomId": 3,
-      "movieTitle": "test2",
+      "date": "16-10-2022 16:00",
+      "movieTitle": "Test1",
+      "movieId": 1,
+      "roomId": 1,
       "id": 29,
-      "availableSeats": 79,
+      "availableSeats": 88,
       "seatsTaken": [
         "A-6"
       ]
-    },
-    {
-      "date": "29-06-2022 11:44",
-      "movieTitle": "test3",
-      "movieId": 4,
-      "roomId": 3,
-      "id": 30,
-      "availableSeats": 76,
-      "seatsTaken": [
-        "A-5",
-        "A-6",
-        "G-5"
-      ]
-    },
-    {
-      "date": "30-06-2022 10:00",
-      "movieTitle": "test2",
-      "movieId": 2,
-      "roomId": 4,
-      "id": 31,
-      "availableSeats": 88,
-      "seatsTaken": [
-        "A-3"
-      ]
-    },
-    {
-      "date": "30-06-2022 12:00",
-      "movieId": 8,
-      "roomId": 3,
-      "movieTitle": "asdasd",
-      "availableSeats": 80,
-      "seatsTaken": [],
-      "id": 33
-    },
-    {
-      "date": "30-06-2022 13:30",
-      "movieTitle": "TESTOWY",
-      "movieId": 9,
-      "roomId": 11,
-      "id": 35,
-      "availableSeats": 121,
-      "seatsTaken": [
-        "C-4"
-      ]
-    },
-    {
-      "date": "30-06-2022 16:58",
-      "movieId": 2,
-      "roomId": 2,
-      "movieTitle": "test2",
-      "availableSeats": 100,
-      "seatsTaken": [],
-      "id": 36
     }
   ],
   "reservations": [
     {
+      "name": "test",
+      "lastName": "test123",
+      "email": "test@gmail.com",
+      "seansId": 28,
+      "seatCode": "A-5",
+      "id": 1
+    },
+    {
+      "name": "test",
+      "lastName": "test123",
+      "email": "test@gmail.com",
+      "seansId": 25,
+      "seatCode": "B-3",
+      "id": 2
+    },
+    {
       "name": "Paweł",
       "lastName": "Awramiuk",
-      "email": "test@gmail.com",
-      "seansId": 8,
+      "email": "awramiukofficial@gmail.com",
+      "seansId": 25,
       "seatCode": "I-10",
       "id": 3
     },
     {
       "name": "Paweł",
       "lastName": "Awramiuk",
-      "email": "tesd@gmail.com",
-      "seansId": 8,
-      "seatCode": "E-2",
+      "email": "awramiukofficial@gmail.com",
+      "seansId": 25,
+      "seatCode": "B-4",
       "id": 4
     },
     {
       "name": "Paweł",
       "lastName": "Awramiuk",
-      "email": "test@gmail.com",
-      "seansId": 8,
-      "seatCode": "D-6",
+      "email": "awramiukofficial@gmail.com",
+      "seansId": 24,
+      "seatCode": "A-5",
       "id": 5
     },
     {
       "name": "Paweł",
       "lastName": "Awramiuk",
-      "email": "asdasd@gmail.com",
-      "seansId": 2,
-      "seatCode": "A-1",
-      "id": 6
-    },
-    {
-      "name": "Paweł",
-      "lastName": "Awramiuk",
-      "email": "ghhf@gmail.com",
-      "seansId": 2,
-      "seatCode": "J-1",
-      "id": 7
-    },
-    {
-      "name": "Paweł",
-      "lastName": "Awramiuk",
       "email": "awramiukofficial@gmail.com",
-      "seansId": 7,
-      "seatCode": "A-1",
-      "id": 8
-    },
-    {
-      "name": "Paweł",
-      "lastName": "Awramiuk",
-      "email": "awramiukofficial@gmail.com",
-      "seansId": 7,
-      "seatCode": "A-1",
-      "id": 9
-    },
-    {
-      "name": "Paweł",
-      "lastName": "Awramiuk",
-      "email": "hghgh@gmail.com",
-      "seansId": 8,
-      "seatCode": "D-3",
-      "id": 10
-    },
-    {
-      "name": "Paweł",
-      "lastName": "Awramiuk",
-      "email": "awramiukofficial@gmail.com",
-      "seansId": 9,
-      "seatCode": "J-5",
-      "id": 11
-    },
-    {
-      "name": "Paweł",
-      "lastName": "Awramiuk",
-      "email": "awramiukofficial@gmail.com",
-      "seansId": 9,
-      "seatCode": "A-1",
-      "id": 12
-    },
-    {
-      "name": "Paweł",
-      "lastName": "Awramiuk",
-      "email": "awramiukofficial@gmail.com",
-      "seansId": 8,
-      "seatCode": "A-5",
-      "id": 13
-    },
-    {
-      "name": "Paweł",
-      "lastName": "Awramiuk",
-      "email": "awramiukofficial@gmail.com",
-      "seansId": 9,
-      "seatCode": "J-4",
-      "id": 14
-    },
-    {
-      "name": "Paweł",
-      "lastName": "Awramiuk",
-      "email": "awramiukofficial@gmail.com",
-      "seansId": 9,
-      "seatCode": "B-4",
-      "id": 15
-    },
-    {
-      "name": "Paweł",
-      "lastName": "Awramiuk",
-      "email": "awramiukofficial@gmail.com",
-      "seansId": 22,
-      "seatCode": "A-2",
-      "id": 16
-    },
-    {
-      "name": "Paweł",
-      "lastName": "Awramiuk",
-      "email": "awramiukofficial@gmail.com",
-      "seansId": 22,
-      "seatCode": "A-5",
-      "id": 17
-    },
-    {
-      "name": "Paweł",
-      "lastName": "Awramiuk",
-      "email": "awramiukofficial@gmail.com",
-      "seansId": 22,
-      "seatCode": "A-3",
-      "id": 18
-    },
-    {
-      "name": "Paweł",
-      "lastName": "Awramiuk",
-      "email": "awramiukofficial@gmail.com",
-      "seansId": 22,
-      "seatCode": "C-8",
-      "id": 19
-    },
-    {
-      "name": "Paweł",
-      "lastName": "Awramiuk",
-      "email": "awramiukofficial@gmail.com",
-      "seansId": 28,
-      "seatCode": "A-4",
-      "id": 20
-    },
-    {
-      "name": "Paweł",
-      "lastName": "Awramiuk",
-      "email": "awramiukofficial@gmail.com",
-      "seansId": 28,
-      "seatCode": "A-5",
-      "id": 21
-    },
-    {
-      "name": "Paweł",
-      "lastName": "Awramiuk",
-      "email": "awramiukofficial@gmail.com",
-      "seansId": 27,
-      "seatCode": "A-5",
-      "id": 22
-    },
-    {
-      "name": "Paweł",
-      "lastName": "Awramiuk",
-      "email": "awramiukofficial@gmail.com",
-      "seansId": 30,
-      "seatCode": "A-5",
-      "id": 23
-    },
-    {
-      "name": "",
-      "lastName": "",
-      "email": "",
       "seansId": 29,
       "seatCode": "A-6",
-      "id": 24
-    },
-    {
-      "name": "Paweł",
-      "lastName": "Awramiuk",
-      "email": "awramiukofficial@gmail.com",
-      "seansId": 28,
-      "seatCode": "C-6",
-      "id": 25
-    },
-    {
-      "name": "Paweł",
-      "lastName": "Awramiuk",
-      "email": "awramiukofficial@gmail.com",
-      "seansId": 28,
-      "seatCode": "A-3",
-      "id": 26
-    },
-    {
-      "name": "Paweł",
-      "lastName": "Awramiuk",
-      "email": "awramiukofficial@gmail.com",
-      "seansId": 30,
-      "seatCode": "A-6",
-      "id": 27
-    },
-    {
-      "name": "Paweł",
-      "lastName": "Awramiuk",
-      "email": "awramiukofficial@gmail.com",
-      "seansId": 31,
-      "seatCode": "A-3",
-      "id": 28
-    },
-    {
-      "name": "Paweł",
-      "lastName": "Awramiuk",
-      "email": "awramiukofficial@gmail.com",
-      "seansId": 30,
-      "seatCode": "G-5",
-      "id": 29
-    },
-    {
-      "name": "Paweł",
-      "lastName": "Awramiuk",
-      "email": "awramiukofficial@gmail.com",
-      "seansId": 32,
-      "seatCode": "A-5",
-      "id": 30
-    },
-    {
-      "name": "Paweł",
-      "lastName": "Awramiuk",
-      "email": "awramiukofficial@gmail.com",
-      "seansId": 32,
-      "seatCode": "D-7",
-      "id": 31
-    },
-    {
-      "name": "Paweł",
-      "lastName": "Awramiuk",
-      "email": "awramiukofficial@gmail.com",
-      "seansId": 32,
-      "seatCode": "A-4",
-      "id": 32
-    },
-    {
-      "name": "Paweł",
-      "lastName": "Awramiuk",
-      "email": "awramiukofficial@gmail.com",
-      "seansId": 32,
-      "seatCode": "F-3",
-      "id": 33
-    },
-    {
-      "name": "Paweł",
-      "lastName": "Awramiuk",
-      "email": "awramiukofficial@gmail.com",
-      "seansId": 35,
-      "seatCode": "C-4",
-      "id": 34
-    },
-    {
-      "name": "Paweł",
-      "lastName": "Awramiuk",
-      "email": "awramiukofficial@gmail.com",
-      "seansId": 34,
-      "seatCode": "A-4",
-      "id": 35
+      "id": 6
     }
   ]
 }
