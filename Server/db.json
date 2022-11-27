@@ -61,76 +61,13 @@
       "capacity": 90
     },
     {
-      "id": 11,
-      "label": "Sala 11",
+      "capacity": 123,
       "value": 11,
-      "capacity": 123
+      "label": "Sala 11",
+      "id": 11
     }
   ],
   "movies": [
-    {
-      "title": "Test1",
-      "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB_w97DRzLt2NKJP-7ypiIi4GshyMz8WM3Fym6EV88IhuiFAvit_ghqp4B3_gPHlNhWtQ&usqp=CAU",
-      "length": 104,
-      "label": "Test1",
-      "popularity": 0,
-      "value": 1,
-      "id": 1
-    },
-    {
-      "title": "test2",
-      "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB_w97DRzLt2NKJP-7ypiIi4GshyMz8WM3Fym6EV88IhuiFAvit_ghqp4B3_gPHlNhWtQ&usqp=CAU",
-      "length": 125,
-      "label": "test2",
-      "value": 2,
-      "popularity": 0,
-      "id": 2
-    },
-    {
-      "title": "test3",
-      "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB_w97DRzLt2NKJP-7ypiIi4GshyMz8WM3Fym6EV88IhuiFAvit_ghqp4B3_gPHlNhWtQ&usqp=CAU",
-      "length": 125,
-      "label": "test2",
-      "value": 3,
-      "popularity": 0,
-      "id": 3
-    },
-    {
-      "id": 4,
-      "title": "123456",
-      "imageURL": "https://i.ebayimg.com/images/g/zK4AAOSw3b9cjJz0/s-l400.jpg",
-      "length": null,
-      "label": "123456",
-      "value": 4,
-      "popularity": 0
-    },
-    {
-      "id": 5,
-      "title": "test123",
-      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Test-Logo.svg/783px-Test-Logo.svg.png",
-      "length": 123,
-      "label": "test123",
-      "value": 5,
-      "popularity": 0
-    },
-    {
-      "id": 6,
-      "title": "test1234",
-      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Test.svg",
-      "length": 123,
-      "label": "test1234",
-      "value": 6,
-      "popularity": 0
-    },
-    {
-      "id": 7,
-      "title": "test12345",
-      "imageURL": "https://przedszkole.doruchow.pl/wp-content/uploads/2017/08/test.png",
-      "length": 44,
-      "label": "test12345",
-      "value": 7,
-      "popularity": 0
-    },
     {
       "id": 8,
       "title": "nowyfilm",
@@ -139,111 +76,111 @@
       "label": "nowyfilm",
       "value": 8,
       "popularity": 0
+    },
+    {
+      "id": 9,
+      "title": "NowyFilm2",
+      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Test-Logo.svg/783px-Test-Logo.svg.png",
+      "length": 100,
+      "label": "NowyFilm2",
+      "value": 9
     }
   ],
   "showings": [
     {
-      "date": "05-12-2021 16:30",
-      "movieId": 1,
-      "roomId": 1,
-      "movieTitle": "Test1",
-      "availableSeats": 90,
-      "seatsTaken": [],
-      "id": 23
-    },
-    {
-      "id": 25,
-      "date": "16-10-2022 09:00",
-      "movieId": 4,
-      "roomId": 7,
-      "movieTitle": "123456",
-      "availableSeats": 86,
+      "id": 31,
+      "date": "25-11-2022 11:00",
+      "movieId": 8,
+      "roomId": 11,
+      "movieTitle": "nowyfilm",
+      "availableSeats": 122,
       "seatsTaken": [
-        "B-3",
-        "I-10",
-        "B-4"
+        "E-5"
       ]
     },
     {
-      "date": "18-10-2022 17:17",
-      "movieId": 6,
-      "roomId": 3,
-      "movieTitle": "test1234",
-      "availableSeats": 80,
-      "seatsTaken": [],
-      "id": 27
-    },
-    {
-      "date": "18-10-2022 19:17",
-      "movieId": 6,
-      "roomId": 5,
-      "movieTitle": "test1234",
-      "availableSeats": 109,
+      "id": 32,
+      "date": "25-11-2022 10:00",
+      "movieId": 8,
+      "roomId": 10,
+      "movieTitle": "nowyfilm",
+      "availableSeats": 89,
       "seatsTaken": [
         "A-5"
-      ],
-      "id": 28
+      ]
     },
     {
-      "date": "16-10-2022 16:00",
-      "movieTitle": "Test1",
-      "movieId": 1,
-      "roomId": 1,
-      "id": 29,
-      "availableSeats": 88,
+      "id": 33,
+      "date": "25-11-2022 11:00",
+      "movieId": 9,
+      "roomId": 9,
+      "movieTitle": "NowyFilm2",
+      "availableSeats": 85,
       "seatsTaken": [
-        "A-6"
+        "A-4",
+        "A-5",
+        "A-6",
+        "A-3",
+        "A-7"
       ]
     }
   ],
   "reservations": [
     {
-      "name": "test",
-      "lastName": "test123",
-      "email": "test@gmail.com",
-      "seansId": 28,
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "awramiukofficial@gmail.com",
+      "showingId": 31,
+      "seatCode": "E-5",
+      "id": 10
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "awramiukofficial@gmail.com",
+      "showingId": 32,
       "seatCode": "A-5",
-      "id": 1
-    },
-    {
-      "name": "test",
-      "lastName": "test123",
-      "email": "test@gmail.com",
-      "seansId": 25,
-      "seatCode": "B-3",
-      "id": 2
+      "id": 11
     },
     {
       "name": "Paweł",
       "lastName": "Awramiuk",
       "email": "awramiukofficial@gmail.com",
-      "seansId": 25,
-      "seatCode": "I-10",
-      "id": 3
+      "showingId": 33,
+      "seatCode": "A-4",
+      "id": 12
     },
     {
       "name": "Paweł",
       "lastName": "Awramiuk",
       "email": "awramiukofficial@gmail.com",
-      "seansId": 25,
-      "seatCode": "B-4",
-      "id": 4
-    },
-    {
-      "name": "Paweł",
-      "lastName": "Awramiuk",
-      "email": "awramiukofficial@gmail.com",
-      "seansId": 24,
+      "showingId": 33,
       "seatCode": "A-5",
-      "id": 5
+      "id": 13
     },
     {
       "name": "Paweł",
       "lastName": "Awramiuk",
       "email": "awramiukofficial@gmail.com",
-      "seansId": 29,
+      "showingId": 33,
       "seatCode": "A-6",
-      "id": 6
+      "id": 14
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "awramiukofficial@gmail.com",
+      "showingId": 33,
+      "seatCode": "A-3",
+      "id": 15
+    },
+    {
+      "name": "Paweł",
+      "lastName": "Awramiuk",
+      "email": "awramiukofficial@gmail.com",
+      "showingId": 33,
+      "seatCode": "A-7",
+      "id": 16
     }
   ]
 }
