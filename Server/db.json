@@ -65,6 +65,12 @@
       "value": 11,
       "label": "Sala 11",
       "id": 11
+    },
+    {
+      "id": 12,
+      "label": "Sala 12",
+      "value": 12,
+      "capacity": 100
     }
   ],
   "movies": [
@@ -84,6 +90,15 @@
       "length": 100,
       "label": "NowyFilm2",
       "value": 9
+    },
+    {
+      "id": 10,
+      "title": "NowyFilm3",
+      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Test-Logo.svg/783px-Test-Logo.svg.png",
+      "length": 100,
+      "label": "NowyFilm3",
+      "value": 10,
+      "popularity": 0
     }
   ],
   "showings": [
@@ -123,6 +138,15 @@
         "A-3",
         "A-7"
       ]
+    },
+    {
+      "date": "30-11-2022 00:00",
+      "movieId": 10,
+      "roomId": 2,
+      "movieTitle": "NowyFilm3",
+      "id": 34,
+      "availableSeats": 100,
+      "seatsTaken": []
     }
   ],
   "reservations": [

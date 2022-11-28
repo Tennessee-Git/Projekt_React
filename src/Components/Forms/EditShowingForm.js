@@ -30,8 +30,6 @@ export default class EditShowingForm extends Component {
       showingId: this.props.id,
       movies: [],
       rooms: [],
-      startDate: "",
-      startTime: "",
       selectedDate: "",
       isDateSelected: false,
       selectedMovie: "",
@@ -85,48 +83,46 @@ export default class EditShowingForm extends Component {
 
   handleDateChange = (date) => {
     this.setState({
-      startDate: date.toString().split(" ")[4].substring(0, 5),
       selectedDate: date,
       isDateSelected: true,
     });
   };
 
   handleSubmit = (event) => {
-    if (
-      this.state.selectedMovieTitle === this.state.oldMovieTitle &&
-      this.state.selectedRoom === this.state.oldRoom &&
-      this.state.isDateSelected === false
-    ) {
-      let updated_showing = {
-        date: this.state.oldDate,
-        movieId: this.state.oldMovieId,
-        roomId: this.state.oldRoom,
-        movieTitle: this.state.oldMovieTitle,
-        id: this.state.showingId,
-        availableSeats: this.state.availableSeats,
-        seatsTaken: this.state.seatsTaken,
-      };
-      console.log(updated_showing);
-      editShowing(updated_showing);
-    } else {
-      if (
-        this.state.selectedDate !== "Invalid date" &&
-        this.state.selectedMovie !== "" &&
-        this.state.selectedRoom !== ""
-      ) {
-        let updated_showing = {
-          date: moment(this.state.selectedDate).format("DD-MM-YYYY HH:mm"),
-          movieId: Number(this.state.selectedMovie),
-          roomId: Number(this.state.selectedRoom),
-          movieTitle: this.state.selectedMovieTitle,
-          id: this.state.showingId,
-          availableSeats: this.state.availableSeats,
-          seatsTaken: this.state.seatsTaken,
-        };
-        console.log(updated_showing);
-        editShowing(updated_showing);
-      }
-    }
+    let updated_showing = {
+      date:
+        this.state.selectedDate !== "" &&
+        this.state.selectedDate !== this.state.oldDate &&
+        String(this.state.selectedDate).toLowerCase() !==
+          "Invalid date".toLowerCase()
+          ? moment(this.state.selectedDate).format("DD-MM-YYYY HH:mm")
+          : this.state.oldDate,
+      movieId:
+        this.state.selectedMovie !== this.state.oldMovieId
+          ? Number(this.state.selectedMovie)
+          : this.state.oldMovieId,
+      roomId:
+        this.state.selectedRoom !== this.state.oldRoom
+          ? Number(this.state.selectedRoom)
+          : this.state.oldRoom,
+      movieTitle:
+        this.state.selectedMovieTitle !== this.state.oldMovieTitle
+          ? this.state.selectedMovieTitle
+          : this.state.oldMovieTitle,
+      id: this.state.showingId,
+      availableSeats:
+        this.state.selectedRoom !== this.state.oldRoom
+          ? this.state.rooms.find(
+              (element) => element.id === this.state.selectedRoom
+            ).capacity
+          : this.state.availableSeats,
+      seatsTaken:
+        this.state.selectedRoom !== this.state.oldRoom
+          ? []
+          : this.state.seatsTaken,
+    };
+    console.log(updated_showing);
+    editShowing(updated_showing);
   };
 
   render() {
